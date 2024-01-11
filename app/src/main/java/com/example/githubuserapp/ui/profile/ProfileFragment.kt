@@ -13,7 +13,6 @@ import com.example.githubuserapp.databinding.FragmentProfileBinding
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
