@@ -16,6 +16,8 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            app:titleTextAppearance="@style/toolbar_text"
+            app:menu="@menu/profile_menu"
             app:title="@string/title_profile"/>
 
     </com.google.android.material.appbar.AppBarLayout>
