@@ -9,4 +9,9 @@
     <string name="share_menu">Share</string>
     <string name="profile_name">Profile Name</string>
     <string name="profile_username">username</string>
+    <string name="edit_profile_menu">Edit Profile</string>
+    <string name="following_count_template">567</string>
+    <string name="followers_count_template">255</string>
+    <string name="followers_template">followers</string>
+    <string name="following_template">following</string>
 </resources>
