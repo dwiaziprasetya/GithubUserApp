@@ -7,6 +7,7 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -14,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:fitsSystemWindows="true"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextAppearance="@style/toolbar_text"
@@ -21,5 +23,40 @@
             app:title="@string/title_profile"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ci_profile_image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/profile_image_template"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar_profile"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <TextView
+        android:id="@+id/tv_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosanssemibold"
+        android:text="@string/profile_name"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ci_profile_image"
+        app:layout_constraintStart_toStartOf="@+id/ci_profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/ci_profile_image"/>
+
+    <TextView
+        android:id="@+id/tv_profile_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/notosanssemibold"
+        android:text="@string/profile_username"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_profile_name"
+        app:layout_constraintStart_toStartOf="@+id/tv_profile_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
