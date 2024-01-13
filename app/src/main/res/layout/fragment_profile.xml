@@ -132,7 +132,54 @@
         android:background="@color/grey_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_followers_template" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_followers_template"/>
+
+    <ImageView
+        android:id="@+id/iv_bio_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/user_bio_icon"
+        tools:ignore="ContentDescription"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/line2"
+        app:layout_constraintTop_toBottomOf="@id/line2"/>
+
+    <TextView
+        android:id="@+id/tv_bio_template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppinsmedium"
+        android:textColor="@color/grey"
+        android:text="@string/bio_template"
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toTopOf="@id/iv_bio_icon"
+        app:layout_constraintStart_toEndOf="@id/iv_bio_icon"/>
+
+    <TextView
+        android:id="@+id/tv_user_bio"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/profile_bio"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_bio_icon"
+        app:layout_constraintStart_toStartOf="@id/tv_bio_template"
+        app:layout_constraintTop_toBottomOf="@id/tv_bio_template"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_bio"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"/>
+
 
     <ImageView
         android:id="@+id/iv_email_icon"
@@ -140,9 +187,10 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/email_icon"
-        app:layout_constraintStart_toStartOf="@+id/line2"
-        app:layout_constraintTop_toBottomOf="@+id/line2"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription"
+        app:layout_constraintStart_toStartOf="@id/line3"
+        app:layout_constraintTop_toBottomOf="@id/line3"
+        app:layout_goneMarginTop="16dp"/>
 
     <TextView
         android:id="@+id/tv_email_template"
@@ -168,8 +216,9 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_email_template"
         app:layout_constraintVertical_bias="0.0" />
 
+    <!-- Line 3 -->
     <View
-        android:id="@+id/line3"
+        android:id="@+id/line4"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -186,8 +235,8 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/location_icon"
-        app:layout_constraintStart_toStartOf="@+id/line3"
-        app:layout_constraintTop_toBottomOf="@+id/line3"
+        app:layout_constraintStart_toStartOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/line4"
         tools:ignore="ContentDescription" />
 
     <TextView
@@ -215,7 +264,7 @@
         app:layout_constraintVertical_bias="0.0"/>
 
     <View
-        android:id="@+id/line4"
+        android:id="@+id/line5"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
@@ -232,8 +281,8 @@
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/organization_icon"
-        app:layout_constraintStart_toStartOf="@+id/line4"
-        app:layout_constraintTop_toBottomOf="@+id/line4"
+        app:layout_constraintStart_toStartOf="@+id/line5"
+        app:layout_constraintTop_toBottomOf="@+id/line5"
         tools:ignore="ContentDescription" />
 
     <TextView

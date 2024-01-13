@@ -19,4 +19,8 @@
     <string name="location_template">Location</string>
     <string name="profile_location">Indonesia</string>
     <string name="organization_template">Organization</string>
+    <string name="bio_template">Bio</string>
+    <string name="profile_bio">Android Developer | Backend Developer | IT Support</string>
+    <string name="message_notification_menu">Message Notification</string>
+    <string name="email_notification_menu">Email Notification</string>
 </resources>
