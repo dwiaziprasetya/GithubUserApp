@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/microphone_menu"
+        android:title="@string/microphone_menu"
+        android:icon="@drawable/microphone_icon"
+        app:showAsAction="ifRoom"/>
+</menu>
