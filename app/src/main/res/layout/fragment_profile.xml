@@ -30,13 +30,13 @@
         android:id="@+id/ci_profile_image"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/profile_image_template"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_bar_profile"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_profile_name"
@@ -127,13 +127,137 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:background="@color/grey"
+        android:background="@color/grey_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_followers_template"/>
+        app:layout_constraintTop_toBottomOf="@+id/tv_followers_template" />
 
+    <ImageView
+        android:id="@+id/iv_email_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/email_icon"
+        app:layout_constraintStart_toStartOf="@+id/line2"
+        app:layout_constraintTop_toBottomOf="@+id/line2"
+        tools:ignore="ContentDescription" />
 
+    <TextView
+        android:id="@+id/tv_email_template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="12sp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/email_template"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toEndOf="@+id/iv_email_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_email_icon" />
+
+    <TextView
+        android:id="@+id/tv_user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/profile_email"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_email_icon"
+        app:layout_constraintStart_toStartOf="@+id/tv_email_template"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_template"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/line3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_email"/>
+
+    <ImageView
+        android:id="@+id/iv_location_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/location_icon"
+        app:layout_constraintStart_toStartOf="@+id/line3"
+        app:layout_constraintTop_toBottomOf="@+id/line3"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_location_template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/location_template"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_location_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_location_icon" />
+
+    <TextView
+        android:id="@+id/tv_user_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/profile_location"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_location_icon"
+        app:layout_constraintStart_toStartOf="@+id/tv_location_template"
+        app:layout_constraintTop_toBottomOf="@+id/tv_location_template"
+        app:layout_constraintVertical_bias="0.0"/>
+
+    <View
+        android:id="@+id/line4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_user_location" />
+
+    <ImageView
+        android:id="@+id/iv_organization_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/organization_icon"
+        app:layout_constraintStart_toStartOf="@+id/line4"
+        app:layout_constraintTop_toBottomOf="@+id/line4"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_organization_template"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="@string/organization_template"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_organization_icon"
+        app:layout_constraintTop_toTopOf="@+id/iv_organization_icon" />
+
+    <TextView
+        android:id="@+id/tv_user_organization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Universitas Diponegoro"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_organization_icon"
+        app:layout_constraintStart_toStartOf="@+id/tv_organization_template"
+        app:layout_constraintTop_toBottomOf="@+id/tv_organization_template"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

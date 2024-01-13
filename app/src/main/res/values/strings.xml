@@ -14,4 +14,9 @@
     <string name="followers_count_template">255</string>
     <string name="followers_template">followers</string>
     <string name="following_template">following</string>
+    <string name="email_template">Email</string>
+    <string name="profile_email">saneswari234@gmail.com</string>
+    <string name="location_template">Location</string>
+    <string name="profile_location">Indonesia</string>
+    <string name="organization_template">Organization</string>
 </resources>
