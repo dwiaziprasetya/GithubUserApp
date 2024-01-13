@@ -23,4 +23,5 @@
     <string name="profile_bio">Android Developer | Backend Developer | IT Support</string>
     <string name="message_notification_menu">Message Notification</string>
     <string name="email_notification_menu">Email Notification</string>
+    <string name="plus_menu">Plus</string>
 </resources>

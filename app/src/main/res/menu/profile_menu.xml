@@ -5,14 +5,14 @@
         android:id="@+id/edit_profile_menu"
         android:title="@string/edit_profile_menu"
         app:showAsAction="never"/>
-<!--    <item-->
-<!--        android:id="@+id/email_notification_menu"-->
-<!--        android:title="@string/email_notification_menu"-->
-<!--        app:showAsAction="ifRoom"-->
-<!--        android:icon="@drawable/email_notification_icon"/>-->
-<!--    <item-->
-<!--        android:id="@+id/message_notification_menu"-->
-<!--        android:title="@string/message_notification_menu"-->
-<!--        app:showAsAction="ifRoom"-->
-<!--        android:icon="@drawable/message_notification_icon"/>-->
+    <item
+        android:id="@+id/plus_menu"
+        android:title="@string/plus_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/circle_plus_icon"/>
+    <item
+        android:id="@+id/email_notification_menu"
+        android:title="@string/message_notification_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/message_icon"/>
 </menu>
