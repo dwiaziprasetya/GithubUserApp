@@ -24,4 +24,7 @@
     <string name="message_notification_menu">Message Notification</string>
     <string name="email_notification_menu">Email Notification</string>
     <string name="plus_menu">Plus</string>
+    <string name="profile_organization">Universitas Diponegoro</string>
+    <string name="repository_template">Repository</string>
+    <string name="user_repository">140</string>
 </resources>

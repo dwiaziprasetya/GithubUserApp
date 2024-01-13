@@ -309,11 +309,55 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsmedium"
-                android:text="Universitas Diponegoro"
+                android:text="@string/profile_organization"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_organization_icon"
                 app:layout_constraintStart_toStartOf="@+id/tv_organization_template"
                 app:layout_constraintTop_toBottomOf="@+id/tv_organization_template"
+                app:layout_constraintVertical_bias="0.0"/>
+
+            <View
+                android:id="@+id/line6"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/transparent"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginStart="32dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_organization"/>
+
+            <ImageView
+                android:id="@+id/iv_repository_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/user_repository_icon"
+                tools:ignore="ContentDescription"
+                app:layout_constraintTop_toBottomOf="@id/line6"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/line6"/>
+
+            <TextView
+                android:id="@+id/tv_repository_template"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/grey"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toEndOf="@id/iv_repository_icon"
+                app:layout_constraintTop_toTopOf="@id/iv_repository_icon"
+                android:text="@string/repository_template"/>
+
+            <TextView
+                android:id="@+id/tv_user_repository"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppinsmedium"
+                android:text="@string/user_repository"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_repository_icon"
+                app:layout_constraintStart_toStartOf="@id/tv_repository_template"
+                app:layout_constraintTop_toBottomOf="@id/tv_repository_template"
                 app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
