@@ -1,10 +1,11 @@
-package com.example.githubuserapp
+package com.example.githubuserapp.ui.activity
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
