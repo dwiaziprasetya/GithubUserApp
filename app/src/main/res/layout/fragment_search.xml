@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.search.SearchFragment">
 
-    <com.google.android.material.search.SearchBar
-        android:id="@+id/search_bar"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:minHeight="?attr/actionBarSize"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#E8E8E8"
-        android:hint="@string/searchbar_hint"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </com.google.android.material.search.SearchBar>
+    <include layout="@layout/search_person"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorOnPrimary">
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#E8E8E8"
+            android:hint="@string/searchbar_hint"
+            android:minHeight="?attr/actionBarSize"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.search.SearchView
         android:id="@+id/search_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:backgroundTint="#E8E8E8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:hint="@string/searchbar_hint"
-        app:layout_anchor="@id/search_bar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:backgroundTint="#E8E8E8"
+        app:layout_anchor="@id/search_bar">
     </com.google.android.material.search.SearchView>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
