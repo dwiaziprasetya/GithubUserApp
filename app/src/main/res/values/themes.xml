@@ -14,10 +14,12 @@
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
         <!-- Customize your theme here. -->
     </style>
+
     <style name="toolbar_text">
         <item name="android:fontFamily">@font/poppinsbold</item>
         <item name="android:textSize">20sp</item>\
     </style>
+
     <style name="active_bottom_nav" parent="@style/Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">?attr/colorOnPrimary</item>
     </style>
