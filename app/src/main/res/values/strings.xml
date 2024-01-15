@@ -17,9 +17,9 @@
     <string name="profile_email">saneswari234@gmail.com</string>
     <string name="location_template">Location</string>
     <string name="profile_location">Indonesia</string>
-    <string name="organization_template">Organization</string>
+    <string name="organization_template">Organization Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum ipsam necessitatibus neque! Aliquam, aut consectetur consequuntur deserunt error fugit, illum laudantium libero minima, nulla odit quibusdam! Accusantium corporis culpa eaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam consequatur dolor esse est eveniet hic libero maxime minima molestiae neque obcaecati officiis quam quasi, qui sint sunt totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid, animi architecto eligendi fugit harum iste maiores nemo neque nostrum, numquam odio pariatur quasi repellat reprehenderit tenetur unde! Explicabo, ipsum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto delectus fuga fugiat in quasi quis reiciendis tempore totam voluptatibus? Assumenda, at dignissimos eos est eum explicabo in iure nisi vel! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cumque eum, illum iste iure labore nihil repudiandae! Aliquam doloribus eius et hic id magni possimus quae totam. Cupiditate, doloremque molestias!</string>
     <string name="bio_template">Bio</string>
-    <string name="profile_bio">Android Developer | Backend Developer | IT Support</string>
+    <string name="profile_bio">Android Developer | Backend Developer | IT Support Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquam, assumenda aut autem beatae blanditiis commodi consequatur doloribus earum et, iusto laudantium maxime natus quidem quisquam repellat, repellendus ut vero? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, illo non quia quos reiciendis soluta tenetur veritatis voluptatem? Aspernatur dolores dolorum exercitationem facere, illo ipsa odio placeat quam rem vero?</string>
     <string name="message_notification_menu">Message Notification</string>
     <string name="email_notification_menu">Email Notification</string>
     <string name="plus_menu">Plus</string>

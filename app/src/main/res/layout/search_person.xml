@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="?attr/colorOnPrimary"
     android:layout_width="match_parent"
+    android:id="@+id/constraint"
     android:layout_height="wrap_content">
 
     <ImageView

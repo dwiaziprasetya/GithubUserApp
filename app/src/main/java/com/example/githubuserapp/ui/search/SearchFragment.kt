@@ -27,15 +27,8 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         with(binding){
             searchBar.inflateMenu(R.menu.search_bar_menu)
-            searchView.setupWithSearchBar(searchBar)
-            searchView
-                .editText
-                .setOnEditorActionListener { textView, actionId, event ->
-                    searchBar.setText(searchView.text)
-                    searchView.hide()
-                    Toast.makeText(requireActivity(), searchView.text, Toast.LENGTH_SHORT).show()
-                    false
-                }
         }
+
+//        binding.searchPersonTemplate.constraint.visibility = View.INVISIBLE
     }
 }
