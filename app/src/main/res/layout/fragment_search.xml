@@ -7,12 +7,12 @@
     <include
         android:id="@+id/inc_layout_search_person"
         layout="@layout/search_person"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
-        android:visibility="invisible"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -44,6 +44,7 @@
 
     <com.google.android.material.search.SearchView
         android:hint="@string/searchbar_hint"
+        app:queryHint="@string/searchbar_hint"
         android:id="@+id/searchView"
         app:backgroundTint="@color/grey_3"
         android:layout_height="match_parent"
