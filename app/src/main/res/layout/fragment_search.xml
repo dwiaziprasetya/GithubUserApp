@@ -6,9 +6,9 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
+        android:visibility="invisible"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:visibility="invisible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -42,7 +42,8 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_height="wrap_content"
+        app:liftOnScrollColor="@color/grey_3"
+        android:layout_height="80dp"
         android:background="?attr/colorOnPrimary"
         android:layout_width="match_parent">
 

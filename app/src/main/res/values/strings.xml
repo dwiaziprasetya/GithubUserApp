@@ -16,6 +16,8 @@
     <string name="user_email">saneswari234@gmail.com</string>
     <string name="user_following">567</string>
     <string name="user_followers">255</string>
+    <string name="user_type">User</string>
+    <string name="user_search_name_template">Michael Steven</string>
 
     <!-- Menu Resource -->
     <string name="menu_refresh">Refresh</string>
