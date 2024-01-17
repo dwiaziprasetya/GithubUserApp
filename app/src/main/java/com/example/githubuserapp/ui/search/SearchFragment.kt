@@ -41,6 +41,7 @@ class SearchFragment : Fragment() {
                 .editText
                 .setOnEditorActionListener { textView, actionId, event ->
                     searchBar.setText(searchView.text)
+                    binding.incLayoutSearchPerson.constraint.visibility = View.GONE
                     setDataPerson(textView.text.toString())
                     searchView.hide()
                     false
@@ -55,6 +56,7 @@ class SearchFragment : Fragment() {
     }
 
     private fun setDataPerson(query : String) {
+        binding.nsvContent.visibility = View.VISIBLE
         val client = ApiConfig.getApiService().getSearch(query)
         client.enqueue(object : Callback<SearchResponse> {
             override fun onResponse(

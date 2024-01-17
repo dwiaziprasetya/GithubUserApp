@@ -4,15 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <include
-        android:id="@+id/inc_layout_search_person"
-        layout="@layout/search_person"
-        android:visibility="invisible"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
+        android:visibility="invisible"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -54,5 +48,12 @@
         <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
 
     </com.google.android.material.search.SearchView>
+
+    <include
+        android:id="@+id/inc_layout_search_person"
+        layout="@layout/search_person"
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="match_parent"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
