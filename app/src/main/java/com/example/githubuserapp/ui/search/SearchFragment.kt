@@ -63,17 +63,20 @@ class SearchFragment : Fragment() {
                 call: Call<SearchResponse>,
                 response: Response<SearchResponse>
             ) {
-                val responseBody = response.body()
-                if (responseBody != null) {
-                    list.clear()
-                    setData(responseBody.items)
-                    val adapter = SearchAdapter(list)
-                    binding.rvPersonList.adapter = adapter
+                showLoading(false)
+                if (response.isSuccessful) {
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        list.clear()
+                        setData(responseBody.items)
+                        val adapter = SearchAdapter(list)
+                        binding.rvPersonList.adapter = adapter
+                    }
                 }
             }
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
-                TODO("Not yet implemented")
+                showLoading(false)
             }
 
         })
@@ -83,7 +86,14 @@ class SearchFragment : Fragment() {
         list.addAll(person)
         for (item in list) {
             Log.d("API_RESPONSE", "Item Name: ${item.login}, Item Name: ${item.id}")
-            // Anda bisa menambahkan informasi lainnya yang ingin Anda lihat pada log
+        }
+    }
+
+    private fun showLoading(isLoading : Boolean) {
+        if (isLoading) {
+            binding.pbSearchPerson.visibility = View.VISIBLE
+        } else {
+            binding.pbSearchPerson.visibility = View.GONE
         }
     }
 }

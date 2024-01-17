@@ -6,17 +6,38 @@
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
-        android:visibility="invisible"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:visibility="invisible"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_person_list"
-            android:background="?attr/colorOnPrimary"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:listitem="@layout/item_person_list"/>
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_person_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorOnPrimary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_person_list"/>
+
+            <ProgressBar
+                android:id="@+id/pb_search_person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:indeterminateTint="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@id/rv_person_list"
+                app:layout_constraintEnd_toEndOf="@+id/rv_person_list"
+                app:layout_constraintStart_toStartOf="@+id/rv_person_list"
+                app:layout_constraintTop_toTopOf="@id/rv_person_list" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
 
