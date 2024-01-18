@@ -1,5 +1,6 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
+    android:background="?attr/colorOnPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
@@ -7,6 +8,9 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
         android:visibility="invisible"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="?attr/colorOnPrimary"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
@@ -16,6 +20,7 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
+
                 android:id="@+id/rv_person_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -32,10 +37,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:indeterminateTint="@color/blue"
-                app:layout_constraintBottom_toBottomOf="@id/rv_person_list"
                 app:layout_constraintEnd_toEndOf="@+id/rv_person_list"
                 app:layout_constraintStart_toStartOf="@+id/rv_person_list"
-                app:layout_constraintTop_toTopOf="@id/rv_person_list" />
+                app:layout_constraintTop_toTopOf="parent" />
             
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -43,7 +47,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         app:liftOnScrollColor="@color/grey_3"
-        android:layout_height="80dp"
+        android:layout_height="75dp"
         android:background="?attr/colorOnPrimary"
         android:layout_width="match_parent">
 
