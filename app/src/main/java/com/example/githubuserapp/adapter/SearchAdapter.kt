@@ -10,9 +10,9 @@ import com.example.githubuserapp.response.ItemsItem
 
 class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerView.Adapter<SearchAdapter.ListViewHolder>() {
 
-//     val listPerson: ArrayList<ItemsItem>
+    private lateinit var onItemCallback : OnItemClickCallBack
 
-    class ListViewHolder(private val binding: ItemPersonListBinding) : RecyclerView.ViewHolder(binding.root){
+    class ListViewHolder(val binding: ItemPersonListBinding) : RecyclerView.ViewHolder(binding.root){
         val imageUrl = "https://avatars.githubusercontent.com/u/"
         fun bind(person : ItemsItem){
             binding.tvPersonName.text = person.login
@@ -32,7 +32,17 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         listPerson[position].let {
             holder.bind(it)
+            holder.binding.root.setOnClickListener {
+                onItemCallback.onItemClicked(listPerson[holder.adapterPosition])
+            }
         }
     }
 
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallBack) {
+        this.onItemCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallBack {
+        fun onItemClicked(data : ItemsItem)
+    }
 }
