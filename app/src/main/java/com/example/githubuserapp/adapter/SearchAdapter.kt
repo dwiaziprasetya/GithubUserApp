@@ -31,7 +31,7 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         listPerson[position].let {
-            (holder as ListViewHolder).bind(it)
+            holder.bind(it)
         }
     }
 
