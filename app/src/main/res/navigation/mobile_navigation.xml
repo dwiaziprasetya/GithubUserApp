@@ -22,15 +22,17 @@
         android:name="com.example.githubuserapp.ui.search.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search"/>
+
     <fragment
         android:id="@+id/navigation_following_follower"
         android:name="com.example.githubuserapp.ui.followingFollower.FollowingFollowerFragment"
         android:label="@string/title_following_follower"
         tools:layout="@layout/fragment_following_follower" />
+
     <fragment
         android:id="@+id/navigation_detail"
         android:name="com.example.githubuserapp.ui.detail.DetailFragment"
         android:label="@string/title_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail"/>
 
 </navigation>

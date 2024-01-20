@@ -1,31 +1,28 @@
 package com.example.githubuserapp.ui.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubuserapp.R
 import com.example.githubuserapp.adapter.SearchAdapter
 import com.example.githubuserapp.databinding.FragmentSearchBinding
 import com.example.githubuserapp.response.ItemsItem
-import com.example.githubuserapp.response.SearchResponse
-import com.example.githubuserapp.retrofit.ApiConfig
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.githubuserapp.ui.detail.DetailFragment
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
-
     private val binding get() = _binding!!
 
     private val list = ArrayList<ItemsItem>()
+    private var adapter = SearchAdapter(list)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,6 +64,12 @@ class SearchFragment : Fragment() {
                 }
         }
 
+        adapter.setOnItemClickCallback(object : SearchAdapter.OnItemClickCallBack {
+            override fun onItemClicked(data: ItemsItem) {
+                // onClickItem
+            }
+        })
+
         // RecyclerView
         binding.rvPersonList.hasFixedSize()
         binding.rvPersonList.layoutManager = LinearLayoutManager(requireActivity())
@@ -76,7 +79,6 @@ class SearchFragment : Fragment() {
     private fun setData(person : List<ItemsItem>) {
         list.clear()
         list.addAll(person)
-        val adapter = SearchAdapter(list)
         binding.rvPersonList.adapter = adapter
         for (item in list) {
             Log.d("API_RESPONSE", "Item Name: ${item.login}, Item Name: ${item.id}")

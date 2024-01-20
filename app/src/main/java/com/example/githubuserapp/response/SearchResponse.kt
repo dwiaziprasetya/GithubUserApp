@@ -1,11 +1,16 @@
 package com.example.githubuserapp.response
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
+
 data class SearchResponse(
 	val totalCount: Int,
 	val incompleteResults: Boolean,
 	val items: List<ItemsItem>
 )
 
+@Parcelize
 data class ItemsItem(
 	val gistsUrl: String,
 	val reposUrl: String,
@@ -16,7 +21,7 @@ data class ItemsItem(
 	val type: String,
 	val url: String,
 	val subscriptionsUrl: String,
-	val score: Any,
+	val score: @RawValue Any,
 	val receivedEventsUrl: String,
 	val avatarUrl: String,
 	val eventsUrl: String,
@@ -26,5 +31,5 @@ data class ItemsItem(
 	val gravatarId: String,
 	val nodeId: String,
 	val organizationsUrl: String
-)
+) : Parcelable
 
