@@ -1,5 +1,6 @@
 package com.example.githubuserapp.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,11 +31,15 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
     override fun getItemCount(): Int = listPerson.size
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        listPerson[position].let {
-            holder.bind(it)
+        val data = listPerson[position]
+        if (data != null) {
+            holder.bind(data)
             holder.binding.root.setOnClickListener {
-                onItemCallback.onItemClicked(listPerson[holder.adapterPosition])
+                onItemCallback.onItemClicked(data)
             }
+        } else {
+            // Handle kasus ketika data null (contoh: menampilkan pesan kesalahan)
+            Log.e("ListAdapter", "Data at position $position is null")
         }
     }
 

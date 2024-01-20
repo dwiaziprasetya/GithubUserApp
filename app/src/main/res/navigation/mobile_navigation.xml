@@ -21,7 +21,11 @@
         android:id="@+id/navigation_search"
         android:name="com.example.githubuserapp.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search"/>
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_following_follower"
@@ -33,6 +37,11 @@
         android:id="@+id/navigation_detail"
         android:name="com.example.githubuserapp.ui.detail.DetailFragment"
         android:label="@string/title_detail"
-        tools:layout="@layout/fragment_detail"/>
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="data"
+            app:argType="string"
+            android:defaultValue="dwiaziprasetya"/>
+    </fragment>
 
 </navigation>

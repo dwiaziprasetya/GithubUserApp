@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubuserapp.R
 import com.example.githubuserapp.adapter.SearchAdapter
@@ -20,6 +21,10 @@ class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
+
+    companion object {
+        const val PERSON_LOGIN = "person_login"
+    }
 
     private val list = ArrayList<ItemsItem>()
     private var adapter = SearchAdapter(list)
@@ -66,7 +71,9 @@ class SearchFragment : Fragment() {
 
         adapter.setOnItemClickCallback(object : SearchAdapter.OnItemClickCallBack {
             override fun onItemClicked(data: ItemsItem) {
-                // onClickItem
+                val action = SearchFragmentDirections.actionNavigationSearchToNavigationDetail()
+                action.data = data.login
+                view.findNavController().navigate(action)
             }
         })
 
@@ -81,7 +88,9 @@ class SearchFragment : Fragment() {
         list.addAll(person)
         binding.rvPersonList.adapter = adapter
         for (item in list) {
-            Log.d("API_RESPONSE", "Item Name: ${item.login}, Item Name: ${item.id}")
+            Log.d("API_RESPONSE", "Item name: ${item.login}, Item Id: ${item.id}, " +
+                    "Item avatarUrl: ${item.avatarUrl}, Item followersUrl: ${item.followersUrl}, " +
+                    "Item followingUrl: ${item.followingUrl},Item gistsUrl: ${item.gistsUrl}")
         }
     }
 
