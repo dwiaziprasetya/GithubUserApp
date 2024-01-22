@@ -92,10 +92,6 @@ class DetailFragment : Fragment() {
         binding.cnsDetail.visibility = if (isSetting) View.VISIBLE else View.GONE
     }
 
-    private fun setUsername(username: String):String {
-        return username
-    }
-
     private fun handleNavigationClick(){
         findNavController().popBackStack()
     }

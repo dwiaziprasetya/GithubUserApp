@@ -32,7 +32,9 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cns_profile"
             android:layout_width="match_parent"
+            android:visibility="invisible"
             android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -109,7 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_followers_count" />
 
             <TextView
-                android:id="@+id/tv_following_count_template"
+                android:id="@+id/tv_following_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -130,9 +132,9 @@
                 android:text="@string/following_template"
                 android:textColor="@color/grey"
                 android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_following_count_template"
-                app:layout_constraintStart_toStartOf="@+id/tv_following_count_template"
-                app:layout_constraintTop_toBottomOf="@+id/tv_following_count_template"/>
+                app:layout_constraintEnd_toEndOf="@+id/tv_following_count"
+                app:layout_constraintStart_toStartOf="@+id/tv_following_count"
+                app:layout_constraintTop_toBottomOf="@+id/tv_following_count"/>
 
             <View
                 android:id="@+id/line2"
@@ -368,5 +370,13 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/pb_profile_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:indeterminateTint="@color/blue"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
