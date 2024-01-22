@@ -1,13 +1,11 @@
 package com.example.githubuserapp.ui.search
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,16 +13,11 @@ import com.example.githubuserapp.R
 import com.example.githubuserapp.adapter.SearchAdapter
 import com.example.githubuserapp.databinding.FragmentSearchBinding
 import com.example.githubuserapp.response.ItemsItem
-import com.example.githubuserapp.ui.detail.DetailFragment
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
-
-    companion object {
-        const val PERSON_LOGIN = "person_login"
-    }
 
     private val list = ArrayList<ItemsItem>()
     private var adapter = SearchAdapter(list)
@@ -41,7 +34,6 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val mainViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory())[SearchViewModel::class.java]
-
 
         mainViewModel.dataPerson.observe(viewLifecycleOwner){
             setData(it)

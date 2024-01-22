@@ -1,26 +1,17 @@
-@file:Suppress("DEPRECATION")
-
 package com.example.githubuserapp.ui.detail
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
-import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentDetailBinding
 import com.example.githubuserapp.response.DetailResponse
-import com.example.githubuserapp.response.ItemsItem
-import com.example.githubuserapp.retrofit.ApiConfig
-import com.example.githubuserapp.ui.search.SearchFragment
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class DetailFragment : Fragment() {
 
@@ -36,39 +27,25 @@ class DetailFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val personUsername = DetailFragmentArgs.fromBundle(arguments as Bundle).data
-        setPersonData(personUsername)
+        super.onViewCreated(view, savedInstanceState)
+        val person = DetailFragmentArgs.fromBundle(arguments as Bundle).data
+        val detailViewModel = ViewModelProvider(this, DetailViewModelFactory(person))[DetailViewModel::class.java]
+
+        detailViewModel.dataPerson.observe(viewLifecycleOwner) {
+            setData(it)
+        }
+
+        detailViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
+        }
+
+        detailViewModel.isSetting.observe(viewLifecycleOwner) {
+            showConstraintLayout(it)
+        }
 
         binding.appBarProfile.setNavigationOnClickListener {
             handleNavigationClick()
         }
-
-
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-    private fun setPersonData(username : String) {
-        val client = ApiConfig.getApiService().getDetailPerson(username)
-        Log.d("NAMA USERNAME WOYY", "showusername: ")
-        client.enqueue(object : Callback<DetailResponse> {
-            override fun onResponse(
-                call: Call<DetailResponse>,
-                response: Response<DetailResponse>
-            ) {
-                if (response.isSuccessful) {
-                    showLoading(false)
-                    val person = response.body()
-                    if (person != null) {
-                        setData(person)
-                    }
-                    showConstraintLayout(true)
-                }
-            }
-
-            override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
-                showLoading(false)
-            }
-        })
     }
 
     private fun setData(person : DetailResponse) {
@@ -107,11 +84,16 @@ class DetailFragment : Fragment() {
     }
 
     private fun showLoading(isLoading : Boolean) {
+        Log.d("DetailFragment", "showLoading: $isLoading")
         binding.pbDetailPerson.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
     private fun showConstraintLayout(isSetting: Boolean) {
         binding.cnsDetail.visibility = if (isSetting) View.VISIBLE else View.GONE
+    }
+
+    private fun setUsername(username: String):String {
+        return username
     }
 
     private fun handleNavigationClick(){
