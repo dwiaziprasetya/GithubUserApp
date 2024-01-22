@@ -79,7 +79,7 @@ class DetailFragment : Fragment() {
         binding.tvUserBio.setTextOrDash(person.bio)
         binding.tvUserEmail.setTextOrDash(person.email)
         binding.tvUserLocation.setTextOrDash(person.location)
-        binding.tvUserOrganization.setTextOrDash(person.company)
+        binding.tvUserCompany.setTextOrDash(person.company)
         binding.tvUserRepository.setTextOrDash(person.publicRepos.toString())
     }
 

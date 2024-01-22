@@ -63,7 +63,7 @@ class ProfileFragment : Fragment() {
             tvUserBio.setTextOrDash(person.bio)
             tvUserEmail.setTextOrDash(person.email)
             tvUserLocation.setTextOrDash(person.location)
-            tvUserOrganization.setTextOrDash(person.company)
+            tvUserCompany.setTextOrDash(person.company)
             tvUserRepository.setTextOrDash(person.publicRepos.toString())
         }
     }

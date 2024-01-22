@@ -37,7 +37,7 @@
     <string name="following_template">following</string>
     <string name="email_template">Email</string>
     <string name="location_template">Location</string>
-    <string name="organization_template">Organization</string>
+    <string name="company_template">Company</string>
     <string name="bio_template">Bio</string>
     <string name="searchbar_hint">Search</string>
     <string name="search_person_template_1">Who are\nyou searching for?</string>
