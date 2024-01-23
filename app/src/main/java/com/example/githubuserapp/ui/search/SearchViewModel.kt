@@ -1,5 +1,6 @@
 package com.example.githubuserapp.ui.search
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -36,11 +37,14 @@ class SearchViewModel : ViewModel() {
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     _dataPerson.value = response.body()?.items
+                } else {
+                    Log.e("SearchViewModel on Response", response.message())
                 }
             }
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
                 _isLoading.value = false
+                Log.e("SearchViewMode on Response", "${t.message}")
             }
 
         })
