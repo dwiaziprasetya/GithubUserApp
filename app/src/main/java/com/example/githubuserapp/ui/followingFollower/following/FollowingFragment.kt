@@ -1,4 +1,4 @@
-package com.example.githubuserapp.ui.followingFollower
+package com.example.githubuserapp.ui.followingFollower.following
 
 import android.os.Bundle
 import android.view.LayoutInflater
