@@ -1,6 +1,8 @@
 package com.example.githubuserapp.retrofit
 
 import com.example.githubuserapp.response.DetailResponse
+import com.example.githubuserapp.response.FollowersResponseItem
+import com.example.githubuserapp.response.FollowingResponseItem
 import com.example.githubuserapp.response.SearchResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -20,4 +22,16 @@ interface ApiService {
     fun getDetailPerson(
         @Path("username") username: String
     ) : Call<DetailResponse>
+
+    @GET("/users/{username}/followers")
+    @Headers("Authorization: token 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")
+    fun getFollowers(
+        @Path("username") username: String
+    ): Call<FollowersResponseItem>
+
+    @GET("/users/{username}/following")
+    @Headers("Authorization: token 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")
+    fun getFollowing(
+        @Path("username") username: String
+    ): Call<FollowingResponseItem>
 }
