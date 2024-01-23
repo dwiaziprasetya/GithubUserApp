@@ -51,5 +51,10 @@
             android:id="@+id/action_navigation_detail_to_navigation_following_follower"
             app:destination="@id/navigation_following_follower" />
     </fragment>
+    <fragment
+        android:id="@+id/followersFragment"
+        android:name="com.example.githubuserapp.ui.followingFollower.FollowersFragment"
+        android:label="fragment_followers"
+        tools:layout="@layout/fragment_followers" />
 
 </navigation>

@@ -22,6 +22,7 @@ class DetailFragment : Fragment() {
 
     companion object {
         const val USERNAME = "username"
+        const val TAB_POSITION = "tab position"
     }
 
     override fun onCreateView(
@@ -56,12 +57,14 @@ class DetailFragment : Fragment() {
         binding.tvFollowersCount.setOnClickListener {
             val mBundle = Bundle()
             mBundle.putString(USERNAME, personUsername)
+            mBundle.putInt(TAB_POSITION, 0)
             view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
         }
 
         binding.tvFollowingCount.setOnClickListener {
             val mBundle = Bundle()
             mBundle.putString(USERNAME, personUsername)
+            mBundle.putInt(TAB_POSITION, 1)
             view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
         }
     }
