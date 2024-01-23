@@ -14,7 +14,8 @@ import com.example.githubuserapp.response.FollowersResponseItem
 
 class FollowersFragment : Fragment() {
     companion object {
-        const val ARG_NAME = "section_number"
+        const val ARG_NAME = "username"
+        const val SECTION_NUMBER = "section_number"
     }
 
     private var _binding: FragmentFollowersBinding? = null
@@ -34,8 +35,10 @@ class FollowersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val username: String = arguments?.getString(ARG_NAME).toString()
-        Log.d("Followers Fragment", username)
-        val followersViewModel = ViewModelProvider(this, FollowersViewModelFactory(username))[FollowersViewModel::class.java]
+        val index: Int = arguments?.getInt(SECTION_NUMBER, 0)!!
+        Log.d("Followers Fragment", "username : $username")
+        Log.d("Followers Fragment", "index : $index")
+        val followersViewModel = ViewModelProvider(this, FollowersViewModelFactory(username, index))[FollowersViewModel::class.java]
 
         followersViewModel.dataPerson.observe(viewLifecycleOwner) {
             setData(it)
