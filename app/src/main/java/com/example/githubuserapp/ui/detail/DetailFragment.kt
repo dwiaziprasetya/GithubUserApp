@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentDetailBinding
 import com.example.githubuserapp.response.DetailResponse
 
@@ -17,6 +19,10 @@ class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+
+    companion object {
+        const val USERNAME = "username"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +34,8 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val person = DetailFragmentArgs.fromBundle(arguments as Bundle).data
-        val detailViewModel = ViewModelProvider(this, DetailViewModelFactory(person))[DetailViewModel::class.java]
+        val personUsername = DetailFragmentArgs.fromBundle(arguments as Bundle).data
+        val detailViewModel = ViewModelProvider(this, DetailViewModelFactory(personUsername))[DetailViewModel::class.java]
 
         detailViewModel.dataPerson.observe(viewLifecycleOwner) {
             setData(it)
@@ -45,6 +51,18 @@ class DetailFragment : Fragment() {
 
         binding.appBarProfile.setNavigationOnClickListener {
             handleNavigationClick()
+        }
+
+        binding.tvFollowersCount.setOnClickListener {
+            val mBundle = Bundle()
+            mBundle.putString(USERNAME, personUsername)
+            view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
+        }
+
+        binding.tvFollowingCount.setOnClickListener {
+            val mBundle = Bundle()
+            mBundle.putString(USERNAME, personUsername)
+            view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
         }
     }
 
