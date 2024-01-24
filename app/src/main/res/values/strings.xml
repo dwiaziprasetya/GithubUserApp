@@ -30,6 +30,8 @@
     <string name="plus_menu">Plus</string>
     <string name="microphone_menu">Microphone</string>
     <string name="edit_profile_menu">Edit Profile</string>
+    <string name="hamburger_menu">Hamburger</string>
+    <string name="notification_menu">Notification</string>
 
     <!-- Template Resource -->
     <string name="repository_template">Repository</string>
@@ -42,7 +44,5 @@
     <string name="searchbar_hint">Search</string>
     <string name="search_person_template_one">Who are\nyou searching for?</string>
     <string name="search_person_template_two">Search all of GitHub for People,\n Repositories, and Repositories</string>
-    <string name="hamburger_menu">Hamburger</string>
-    <string name="notification_menu">Notification</string>
 
 </resources>
