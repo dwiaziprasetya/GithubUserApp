@@ -2,9 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/refresh_menu"
-        android:title="@string/menu_refresh"
-        app:showAsAction="never"/>
+        android:id="@+id/plus_menu"
+        android:title="@string/plus_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/circle_plus_icon"/>
     <item
         android:id="@+id/notification_menu"
         android:title="@string/notification_menu"
