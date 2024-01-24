@@ -5,4 +5,14 @@
         android:id="@+id/refresh_menu"
         android:title="@string/menu_refresh"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/notification_menu"
+        android:title="@string/notification_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/notification_icon"/>
+    <item
+        android:id="@+id/message_menu"
+        android:title="@string/message_notification_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/message_icon"/>
 </menu>

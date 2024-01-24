@@ -7,8 +7,8 @@
         app:showAsAction="ifRoom"
         android:icon="@drawable/circle_plus_icon"/>
     <item
-        android:id="@+id/email_notification_menu"
-        android:title="@string/message_notification_menu"
+        android:id="@+id/hamburger_menu"
+        android:title="@string/hamburger_menu"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/message_icon"/>
+        android:icon="@drawable/hamburger_menu_icon"/>
 </menu>
