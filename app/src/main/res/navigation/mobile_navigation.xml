@@ -18,6 +18,11 @@
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_navigation_profile_to_navigation_following_follower"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/navigation_following_follower" />
     </fragment>
 
@@ -53,8 +58,14 @@
             android:defaultValue="dwiaziprasetya"/>
         <action
             android:id="@+id/action_navigation_detail_to_navigation_following_follower"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/navigation_following_follower" />
     </fragment>
+
     <fragment
         android:id="@+id/followersFragment"
         android:name="com.example.githubuserapp.ui.followingFollower.followers.FollowersFragment"
