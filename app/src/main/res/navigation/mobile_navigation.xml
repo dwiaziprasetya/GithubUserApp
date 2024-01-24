@@ -68,7 +68,7 @@
 
     <fragment
         android:id="@+id/followersFragment"
-        android:name="com.example.githubuserapp.ui.followingFollower.followers.FollowersFragment"
+        android:name="com.example.githubuserapp.ui.followingFollower.followItems.FollowItemsFragment"
         android:label="fragment_followers"
         tools:layout="@layout/fragment_followers" />
 

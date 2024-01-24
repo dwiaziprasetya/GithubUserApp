@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.followingFollower.followers.FollowersFragment">
+    tools:context=".ui.followingFollower.followItems.FollowItemsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_followers"

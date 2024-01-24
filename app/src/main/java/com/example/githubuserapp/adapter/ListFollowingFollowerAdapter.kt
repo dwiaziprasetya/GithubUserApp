@@ -8,8 +8,7 @@ import com.example.githubuserapp.databinding.ItemPersonListBinding
 import com.example.githubuserapp.response.FollowersResponseItem
 
 class ListFollowingFollowerAdapter(private val list: ArrayList<FollowersResponseItem>): RecyclerView.Adapter<ListFollowingFollowerAdapter.ListViewHolder>() {
-    class ListViewHolder(val binding: ItemPersonListBinding): RecyclerView.ViewHolder(binding.root){
-        val imageUrl = "https://avatars.githubusercontent.com/u/"
+    class ListViewHolder(val binding: ItemPersonListBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(person: FollowersResponseItem){
             binding.tvPersonName.text = person.login
             binding.tvUserType.text = person.type

@@ -1,4 +1,4 @@
-package com.example.githubuserapp.ui.followingFollower.followers
+package com.example.githubuserapp.ui.followingFollower.followItems
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class FollowersViewModel(username: String, index: Int): ViewModel() {
+class FollowItemsViewModel(username: String, index: Int): ViewModel() {
     private val _dataPerson = MutableLiveData<List<FollowersResponseItem>>()
     val dataPerson: LiveData<List<FollowersResponseItem>> = _dataPerson
 

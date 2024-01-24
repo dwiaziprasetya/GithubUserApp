@@ -12,7 +12,7 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
 
     private lateinit var onItemCallback : OnItemClickCallBack
 
-    class ListViewHolder(val binding: ItemPersonListBinding) : RecyclerView.ViewHolder(binding.root){
+    class ListViewHolder(val binding: ItemPersonListBinding) : RecyclerView.ViewHolder(binding.root) {
         val imageUrl = "https://avatars.githubusercontent.com/u/"
         fun bind(person : ItemsItem){
             binding.tvPersonName.text = person.login
@@ -38,7 +38,6 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
                 onItemCallback.onItemClicked(data)
             }
         } else {
-            // Handle kasus ketika data null (contoh: menampilkan pesan kesalahan)
             Log.e("ListAdapter", "Data at position $position is null")
         }
     }

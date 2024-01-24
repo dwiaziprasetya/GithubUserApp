@@ -1,4 +1,4 @@
-package com.example.githubuserapp.ui.followingFollower.followers
+package com.example.githubuserapp.ui.followingFollower.followItems
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import com.example.githubuserapp.adapter.ListFollowingFollowerAdapter
 import com.example.githubuserapp.databinding.FragmentFollowersBinding
 import com.example.githubuserapp.response.FollowersResponseItem
 
-class FollowersFragment : Fragment() {
+class FollowItemsFragment : Fragment() {
     companion object {
         const val ARG_NAME = "username"
         const val SECTION_NUMBER = "section_number"
@@ -38,13 +38,13 @@ class FollowersFragment : Fragment() {
         val index: Int = arguments?.getInt(SECTION_NUMBER, 0)!!
         Log.d("Followers Fragment", "username : $username")
         Log.d("Followers Fragment", "index : $index")
-        val followersViewModel = ViewModelProvider(this, FollowersViewModelFactory(username, index))[FollowersViewModel::class.java]
+        val followItemsViewModel = ViewModelProvider(this, FollowItemsViewModelFactory(username, index))[FollowItemsViewModel::class.java]
 
-        followersViewModel.dataPerson.observe(viewLifecycleOwner) {
+        followItemsViewModel.dataPerson.observe(viewLifecycleOwner) {
             setData(it)
         }
 
-        followersViewModel.isLoading.observe(viewLifecycleOwner) {
+        followItemsViewModel.isLoading.observe(viewLifecycleOwner) {
             showLoading(it)
         }
 
