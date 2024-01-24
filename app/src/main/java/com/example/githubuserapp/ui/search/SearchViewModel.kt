@@ -46,7 +46,6 @@ class SearchViewModel : ViewModel() {
                 _isLoading.value = false
                 Log.e("SearchViewMode on Response", "${t.message}")
             }
-
         })
     }
 }

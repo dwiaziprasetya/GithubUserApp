@@ -79,6 +79,8 @@ class SearchFragment : Fragment() {
         list.clear()
         list.addAll(person)
         binding.rvPersonList.adapter = adapter
+
+        // Check Person
         for (item in list) {
             Log.d("API_RESPONSE", "Item name: ${item.login}, Item Id: ${item.id}, " +
                     "Item avatarUrl: ${item.avatarUrl}, Item followersUrl: ${item.followersUrl}, " +
@@ -87,7 +89,6 @@ class SearchFragment : Fragment() {
     }
 
     private fun showLoading(isLoading : Boolean) {
-        Log.d("SearchFragment", "showLoading: $isLoading")
         binding.pbSearchPerson.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 

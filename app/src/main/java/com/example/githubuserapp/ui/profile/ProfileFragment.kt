@@ -19,6 +19,7 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     companion object {
+        const val USER = "dwiaziprasetya"
         const val USERNAME = "username"
         const val TAB_POSITION = "tab position"
         const val FOLLOWERS = 0
@@ -53,20 +54,22 @@ class ProfileFragment : Fragment() {
 
         binding.tvFollowersCount.setOnClickListener {
             val mBundle = Bundle()
-            mBundle.putString(USERNAME, "dwiaziprasetya")
+            mBundle.putString(USERNAME, USER)
             mBundle.putInt(TAB_POSITION, FOLLOWERS)
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
 
         binding.tvFollowingCount.setOnClickListener {
             val mBundle = Bundle()
-            mBundle.putString(USERNAME, "dwiaziprasetya")
+            mBundle.putString(USERNAME, USER)
             mBundle.putInt(TAB_POSITION, FOLLOWING)
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
     }
 
     private fun setData(person: DetailResponse){
+
+        // Default value
         fun TextView.setTextOrDash(value: CharSequence?){
             text = value ?: "-"
         }

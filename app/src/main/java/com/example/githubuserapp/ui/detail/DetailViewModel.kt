@@ -1,6 +1,5 @@
 package com.example.githubuserapp.ui.detail
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -28,7 +27,6 @@ class DetailViewModel(username: String) : ViewModel() {
         _isSetting.value = false
         _isLoading.value = true
         val client = ApiConfig.getApiService().getDetailPerson(username)
-        Log.d("NAMA USERNAME WOYY", "showusername: ")
         client.enqueue(object : Callback<DetailResponse> {
             override fun onResponse(
                 call: Call<DetailResponse>,

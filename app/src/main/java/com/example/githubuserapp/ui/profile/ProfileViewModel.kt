@@ -19,6 +19,10 @@ class ProfileViewModel : ViewModel() {
     private val _isSetting = MutableLiveData<Boolean>()
     val isSetting: LiveData<Boolean> = _isSetting
 
+    companion object {
+        const val USER = "dwiaziprasetya"
+    }
+
     init {
         setProfileData()
     }
@@ -26,7 +30,7 @@ class ProfileViewModel : ViewModel() {
     private fun setProfileData() {
         _isSetting.value = false
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getDetailPerson("dwiaziprasetya")
+        val client = ApiConfig.getApiService().getDetailPerson(USER)
         client.enqueue(object : Callback<DetailResponse> {
             override fun onResponse(
                 call: Call<DetailResponse>,

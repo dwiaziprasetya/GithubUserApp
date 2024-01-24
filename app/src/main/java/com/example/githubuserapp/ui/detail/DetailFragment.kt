@@ -1,7 +1,6 @@
 package com.example.githubuserapp.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +22,8 @@ class DetailFragment : Fragment() {
     companion object {
         const val USERNAME = "username"
         const val TAB_POSITION = "tab position"
+        const val FOLLOWERS = 0
+        const val FOLLOWING = 1
     }
 
     override fun onCreateView(
@@ -54,6 +55,7 @@ class DetailFragment : Fragment() {
             handleNavigationClick()
         }
 
+        // OnClick
         binding.tvFollowersCount.setOnClickListener {
             val mBundle = Bundle()
             mBundle.putString(USERNAME, personUsername)
@@ -76,17 +78,6 @@ class DetailFragment : Fragment() {
             text = value ?: "-"
         }
 
-        Log.d("DetailFragment", "Person ID: ${person.id}")
-        Log.d("DetailFragment", "Person Name: ${person.name}")
-        Log.d("DetailFragment", "Person username: ${person.login}")
-        Log.d("DetailFragment", "Person followers: ${person.followers}")
-        Log.d("DetailFragment", "Person following: ${person.following}")
-        Log.d("DetailFragment", "Person avatar: ${person.avatarUrl}")
-        Log.d("DetailFragment", "Person email: ${person.email}")
-        Log.d("DetailFragment", "Person repository: ${person.publicRepos}")
-        Log.d("DetailFragment", "Person bio: ${person.bio}")
-        Log.d("DetailFragment", "Person location: ${person.location}")
-
         val imageUrl = "https://avatars.githubusercontent.com/u/"
         context?.let {
             Glide.with(it)
@@ -105,7 +96,6 @@ class DetailFragment : Fragment() {
     }
 
     private fun showLoading(isLoading : Boolean) {
-        Log.d("DetailFragment", "showLoading: $isLoading")
         binding.pbDetailPerson.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
