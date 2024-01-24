@@ -24,7 +24,7 @@ class FollowersViewModel(username: String, index: Int): ViewModel() {
     private fun setFollowData(username: String, index: Int) {
         _isLoading.value = true
         when(index) {
-            0 -> {
+            0 -> { // Follower
                 val clientFollower = ApiConfig.getApiService().getFollowers(username)
                 clientFollower.enqueue(object: Callback<List<FollowersResponseItem>> {
                     override fun onResponse(
@@ -43,7 +43,7 @@ class FollowersViewModel(username: String, index: Int): ViewModel() {
                     }
                 })
             }
-            1 -> {
+            1 -> { // Following
                 val clientFollowing = ApiConfig.getApiService().getFollowing(username)
                 clientFollowing.enqueue(object: Callback<List<FollowersResponseItem>> {
                     override fun onResponse(

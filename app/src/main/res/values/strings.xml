@@ -40,9 +40,7 @@
     <string name="company_template">Company</string>
     <string name="bio_template">Bio</string>
     <string name="searchbar_hint">Search</string>
-    <string name="search_person_template_1">Who are\nyou searching for?</string>
-    <string name="search_person_template_2">Search for your favorite thing or find\nsimilar results in this area</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_person_template_one">Who are\nyou searching for?</string>
+    <string name="search_person_template_two">Search all of GitHub for People,\n Repositories, and Repositories</string>
 
 </resources>

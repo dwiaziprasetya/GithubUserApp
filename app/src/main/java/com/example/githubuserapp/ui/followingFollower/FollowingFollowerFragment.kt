@@ -26,8 +26,6 @@ class FollowingFollowerFragment : Fragment() {
             R.string.followers_template,
             R.string.following_template
         )
-
-        const val ARG_USERNAME = "username"
     }
 
     override fun onCreateView(
@@ -40,24 +38,21 @@ class FollowingFollowerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Data sharing
         val tabPosition = arguments?.getInt(DetailFragment.TAB_POSITION)
         val personUsername = arguments?.getString(DetailFragment.USERNAME)
 
+        // Tab Layout and View Pager 2
         val sectionsPageAdapter = SectionsPagerAdapter(requireActivity())
         sectionsPageAdapter.userName = personUsername!!
-
-
         val viewPager: ViewPager2 = binding.viewPager
         viewPager.adapter = sectionsPageAdapter
         viewPager.post { viewPager.setCurrentItem(tabPosition!!, false) }
-
         val tabs: TabLayout = binding.tabs
-
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
-
-        val username = arguments?.getString(ARG_USERNAME)
 
         binding.appBarFollowingFollowers.setNavigationOnClickListener { handleNavigationClick() }
         binding.appBarFollowingFollowers.setTitle(personUsername)

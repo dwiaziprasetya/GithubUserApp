@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentProfileBinding
 import com.example.githubuserapp.response.DetailResponse
 
@@ -15,6 +17,13 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+
+    companion object {
+        const val USERNAME = "username"
+        const val TAB_POSITION = "tab position"
+        const val FOLLOWERS = 0
+        const val FOLLOWING = 1
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,6 +49,20 @@ class ProfileFragment : Fragment() {
 
         profileViewModel.isSetting.observe(viewLifecycleOwner) {
             showConstraintLayout(it)
+        }
+
+        binding.tvFollowersCount.setOnClickListener {
+            val mBundle = Bundle()
+            mBundle.putString(USERNAME, "dwiaziprasetya")
+            mBundle.putInt(TAB_POSITION, FOLLOWERS)
+            view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
+        }
+
+        binding.tvFollowingCount.setOnClickListener {
+            val mBundle = Bundle()
+            mBundle.putString(USERNAME, "dwiaziprasetya")
+            mBundle.putInt(TAB_POSITION, FOLLOWING)
+            view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
     }
 
