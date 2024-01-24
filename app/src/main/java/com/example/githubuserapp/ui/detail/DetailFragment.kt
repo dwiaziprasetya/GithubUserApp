@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentDetailBinding
 import com.example.githubuserapp.response.DetailResponse
@@ -78,7 +79,8 @@ class DetailFragment : Fragment() {
             text = value ?: "-"
         }
 
-        val imageUrl = "https://avatars.githubusercontent.com/u/"
+        val imageUrl = BuildConfig.BASE_URL_AVATAR_URL
+
         context?.let {
             Glide.with(it)
                 .load(imageUrl + person.id + "?v=4")

@@ -3,6 +3,7 @@ package com.example.githubuserapp.ui.profile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.response.DetailResponse
 import com.example.githubuserapp.retrofit.ApiConfig
 import retrofit2.Call
@@ -20,7 +21,7 @@ class ProfileViewModel : ViewModel() {
     val isSetting: LiveData<Boolean> = _isSetting
 
     companion object {
-        const val USER = "dwiaziprasetya"
+        const val USER = BuildConfig.PROFILE_USERNAME
     }
 
     init {

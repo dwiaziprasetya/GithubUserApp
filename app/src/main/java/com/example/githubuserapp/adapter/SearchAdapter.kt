@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.databinding.ItemPersonListBinding
 import com.example.githubuserapp.response.ItemsItem
 
@@ -13,12 +14,12 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
     private lateinit var onItemCallback : OnItemClickCallBack
 
     class ListViewHolder(val binding: ItemPersonListBinding) : RecyclerView.ViewHolder(binding.root) {
-        val imageUrl = "https://avatars.githubusercontent.com/u/"
         fun bind(person : ItemsItem){
+            val baseUrl = BuildConfig.BASE_URL_AVATAR_URL
             binding.tvPersonName.text = person.login
             binding.tvUserType.text = person.type
             Glide.with(itemView)
-                .load(imageUrl + person.id + "?v=4")
+                .load(baseUrl + person.id + "?v=4")
                 .into(binding.tvPersonAvatar)
         }
     }

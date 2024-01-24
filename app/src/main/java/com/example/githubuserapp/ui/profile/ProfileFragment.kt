@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
+import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentProfileBinding
 import com.example.githubuserapp.response.DetailResponse
@@ -19,7 +20,6 @@ class ProfileFragment : Fragment() {
     private val binding get() = _binding!!
 
     companion object {
-        const val USER = "dwiaziprasetya"
         const val USERNAME = "username"
         const val TAB_POSITION = "tab position"
         const val FOLLOWERS = 0
@@ -54,14 +54,14 @@ class ProfileFragment : Fragment() {
 
         binding.tvFollowersCount.setOnClickListener {
             val mBundle = Bundle()
-            mBundle.putString(USERNAME, USER)
+            mBundle.putString(USERNAME, BuildConfig.PROFILE_USERNAME)
             mBundle.putInt(TAB_POSITION, FOLLOWERS)
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
 
         binding.tvFollowingCount.setOnClickListener {
             val mBundle = Bundle()
-            mBundle.putString(USERNAME, USER)
+            mBundle.putString(USERNAME, BuildConfig.PROFILE_USERNAME)
             mBundle.putInt(TAB_POSITION, FOLLOWING)
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
@@ -74,7 +74,7 @@ class ProfileFragment : Fragment() {
             text = value ?: "-"
         }
 
-        val imageUrl = "https://avatars.githubusercontent.com/u/"
+        val imageUrl = BuildConfig.BASE_URL_AVATAR_URL
         context?.let {
             Glide.with(it)
                 .load(imageUrl + person.id + "?v=4")

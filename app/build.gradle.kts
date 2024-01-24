@@ -18,6 +18,12 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // BASE_URL_GITHUB API
+        buildConfigField("String", "TOKEN", "\"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\"")
+        buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
+        buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")
+        buildConfigField("String", "PROFILE_USERNAME", "\"dwiaziprasetya\"")
     }
 
     buildTypes {
@@ -38,6 +44,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 

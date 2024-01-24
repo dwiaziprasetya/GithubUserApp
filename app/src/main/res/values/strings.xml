@@ -44,5 +44,7 @@
     <string name="searchbar_hint">Search</string>
     <string name="search_person_template_one">Who are\nyou searching for?</string>
     <string name="search_person_template_two">Search all of GitHub for People,\n Repositories, and Repositories</string>
+    <string name="home_template_1">All caught up!</string>
+    <string name="home_template_2">Take a break, write some code, and do what you\ndo best.</string>
 
 </resources>

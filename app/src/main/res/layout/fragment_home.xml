@@ -35,14 +35,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.35000002"
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/home_template_1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsbold"
-        android:text="All caught up!"
+        android:text="@string/home_template_1"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -53,11 +54,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsmedium"
-        android:text="Take a break, write some code, and do what you\ndo best."
+        android:text="@string/home_template_2"
         android:textAlignment="center"
         android:textColor="@color/grey_2"
-        app:layout_constraintEnd_toEndOf="@+id/home_template_1"
-        app:layout_constraintStart_toStartOf="@+id/home_template_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_template_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
