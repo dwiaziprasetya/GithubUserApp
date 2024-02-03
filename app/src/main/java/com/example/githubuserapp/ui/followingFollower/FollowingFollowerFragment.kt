@@ -45,17 +45,24 @@ class FollowingFollowerFragment : Fragment() {
 
         // Tab Layout and View Pager 2
         val sectionsPageAdapter = SectionsPagerAdapter(requireActivity())
-        sectionsPageAdapter.userName = personUsername!!
+        if (personUsername != null) {
+            sectionsPageAdapter.userName = personUsername
+        }
+
         val viewPager: ViewPager2 = binding.viewPager
         viewPager.adapter = sectionsPageAdapter
-        viewPager.post { viewPager.setCurrentItem(tabPosition!!, false) }
+        viewPager.post {
+            if (tabPosition != null) {
+                viewPager.setCurrentItem(tabPosition, false)
+            }
+        }
         val tabs: TabLayout = binding.tabs
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
 
         binding.appBarFollowingFollowers.setNavigationOnClickListener { handleNavigationClick() }
-        binding.appBarFollowingFollowers.setTitle(personUsername)
+        binding.appBarFollowingFollowers.title = personUsername
     }
 
     private fun handleNavigationClick(){
