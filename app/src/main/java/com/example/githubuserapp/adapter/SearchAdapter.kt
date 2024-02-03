@@ -33,13 +33,9 @@ class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerVi
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val data = listPerson[position]
-        if (data != null) {
-            holder.bind(data)
-            holder.binding.root.setOnClickListener {
-                onItemCallback.onItemClicked(data)
-            }
-        } else {
-            Log.e("ListAdapter", "Data at position $position is null")
+        holder.bind(data)
+        holder.binding.root.setOnClickListener {
+            onItemCallback.onItemClicked(data)
         }
     }
 
