@@ -24,7 +24,7 @@ class FollowingFollowerFragment : Fragment() {
         @StringRes
         private val TAB_TITLES = intArrayOf(
             R.string.followers_template,
-            R.string.following_template
+            R.string.following_template,
         )
     }
 
