@@ -52,7 +52,7 @@ class SearchFragment : Fragment() {
             searchBar.inflateMenu(R.menu.search_bar_menu)
             searchView
                 .editText
-                .setOnEditorActionListener { textView, actionId, event ->
+                .setOnEditorActionListener { textView, _, _ ->
                     searchBar.setText(searchView.text)
                     mainViewModel.setDataPerson(textView.text.toString())
                     mainViewModel.setSearchingState(true)
