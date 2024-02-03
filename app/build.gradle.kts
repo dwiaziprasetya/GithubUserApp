@@ -19,8 +19,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
+        // 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 token
         // BASE_URL_GITHUB API
-        buildConfigField("String", "TOKEN", "\"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\"")
+        buildConfigField("String", "TOKEN", "\"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\"")
         buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
         buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")
         buildConfigField("String", "PROFILE_USERNAME", "\"dwiaziprasetya\"")
