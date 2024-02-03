@@ -20,17 +20,10 @@ class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
 
-    companion object {
-        const val USERNAME = "username"
-        const val TAB_POSITION = "tab position"
-        const val FOLLOWERS = 0
-        const val FOLLOWING = 1
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -107,5 +100,10 @@ class DetailFragment : Fragment() {
 
     private fun handleNavigationClick(){
         findNavController().popBackStack()
+    }
+
+    companion object {
+        const val USERNAME = "username"
+        const val TAB_POSITION = "tab position"
     }
 }
