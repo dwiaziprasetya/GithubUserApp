@@ -59,13 +59,14 @@ class ProfileFragment : Fragment() {
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
 
-//        binding.toolbarProfile.setOnClickListener { menuItem ->
-//            when (menuItem.id) {
-//                R.id.settings_menu -> {
-//                    Toast.makeText(requireActivity(), "Settings", Toast.LENGTH_SHORT).show()
-//                }
-//            }
-//        }
+        binding.toolbarProfile.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId) {
+                R.id.settings_menu -> {
+                    view.findNavController().navigate(R.id.action_navigation_profile_to_settingsActivity)
+                    true
+                } else -> false
+            }
+        }
     }
 
     private fun setData(person: DetailResponse){
