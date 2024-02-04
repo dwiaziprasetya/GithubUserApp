@@ -2,13 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/plus_menu"
-        android:title="@string/plus_menu"
+        android:id="@+id/share_menu"
+        android:title="@string/share_menu"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/circle_plus_icon"/>
+        android:icon="@drawable/share_icon"/>
     <item
-        android:id="@+id/hamburger_menu"
-        android:title="@string/hamburger_menu"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/hamburger_menu_icon"/>
+        android:id="@+id/settings_menu"
+        android:title="@string/settings_menu"
+        app:showAsAction="always"
+        android:icon="@drawable/settings_icon"/>
 </menu>

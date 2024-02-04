@@ -20,7 +20,7 @@
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
             app:navigationIcon="@drawable/baseline_arrow_back_24"
-            app:title="@string/setting_menu"
+            app:title="@string/settings_menu"
             app:titleMarginTop="18dp"
             app:titleTextAppearance="@style/toolbar_text_following_followers"/>
 

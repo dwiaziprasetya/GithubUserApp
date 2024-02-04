@@ -23,7 +23,7 @@
 
     <!-- Menu Resource -->
     <string name="menu_refresh">Refresh</string>
-    <string name="setting_menu">Settings</string>
+    <string name="settings_menu">Settings</string>
     <string name="share_menu">Share</string>
     <string name="message_notification_menu">Message Notification</string>
     <string name="email_notification_menu">Email Notification</string>
