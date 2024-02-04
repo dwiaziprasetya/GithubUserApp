@@ -1,7 +1,6 @@
 package com.example.githubuserapp.ui.search
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -79,13 +78,6 @@ class SearchFragment : Fragment() {
         list.clear()
         list.addAll(person)
         binding.rvPersonList.adapter = adapter
-
-        // Check Person
-        for (item in list) {
-            Log.d("API_RESPONSE", "Item name: ${item.login}, Item Id: ${item.id}, " +
-                    "Item avatarUrl: ${item.avatarUrl}, Item followersUrl: ${item.followersUrl}, " +
-                    "Item followingUrl: ${item.followingUrl},Item gistsUrl: ${item.gistsUrl}")
-        }
     }
 
     private fun showLoading(isLoading : Boolean) {

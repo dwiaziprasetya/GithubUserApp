@@ -27,7 +27,7 @@ android {
         buildConfigField("String", "TOKEN", "\"${properties.getProperty("TOKEN")}\"")
         buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
         buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")
-        buildConfigField("String", "PROFILE_USERNAME", "\"dwiaziprasetya\"")
+        buildConfigField("String", "PROFILE_USERNAME", "\"${properties.getProperty("username")}\"")
     }
 
     buildTypes {

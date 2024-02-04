@@ -3,6 +3,7 @@ package com.example.githubuserapp.ui.followingFollower.followItems
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
+@Suppress("UNCHECKED_CAST")
 class FollowItemsViewModelFactory(private val username: String,
                                   private val index: Int): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
