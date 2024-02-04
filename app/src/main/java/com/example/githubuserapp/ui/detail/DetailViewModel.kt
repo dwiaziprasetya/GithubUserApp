@@ -3,8 +3,8 @@ package com.example.githubuserapp.ui.detail
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserapp.response.DetailResponse
-import com.example.githubuserapp.retrofit.ApiConfig
+import com.example.githubuserapp.data.remote.response.DetailResponse
+import com.example.githubuserapp.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

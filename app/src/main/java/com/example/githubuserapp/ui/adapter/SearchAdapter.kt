@@ -1,4 +1,4 @@
-package com.example.githubuserapp.adapter
+package com.example.githubuserapp.ui.adapter
 
 import android.util.Log
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.databinding.ItemPersonListBinding
-import com.example.githubuserapp.response.ItemsItem
+import com.example.githubuserapp.data.remote.response.ItemsItem
 
 class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerView.Adapter<SearchAdapter.ListViewHolder>() {
 

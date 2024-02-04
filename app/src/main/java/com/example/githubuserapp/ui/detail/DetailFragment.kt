@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentDetailBinding
-import com.example.githubuserapp.response.DetailResponse
+import com.example.githubuserapp.data.remote.response.DetailResponse
 
 class DetailFragment : Fragment() {
 

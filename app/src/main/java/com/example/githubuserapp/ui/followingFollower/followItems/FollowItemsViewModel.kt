@@ -1,11 +1,10 @@
 package com.example.githubuserapp.ui.followingFollower.followItems
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserapp.response.FollowersResponseItem
-import com.example.githubuserapp.retrofit.ApiConfig
+import com.example.githubuserapp.data.remote.response.FollowersResponseItem
+import com.example.githubuserapp.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -32,10 +31,7 @@ class FollowItemsViewModel(username: String, index: Int): ViewModel() {
                         response: Response<List<FollowersResponseItem>>
                     ) {
                         _isLoading.value = false
-                        if (response.isSuccessful) {
-                            _dataPerson.value = response.body()
-                            Log.d("Followers Fragment", "index : $index")
-                        }
+                        if (response.isSuccessful) _dataPerson.value = response.body()
                     }
 
                     override fun onFailure(call: Call<List<FollowersResponseItem>>, t: Throwable) {
@@ -51,10 +47,7 @@ class FollowItemsViewModel(username: String, index: Int): ViewModel() {
                         response: Response<List<FollowersResponseItem>>
                     ) {
                         _isLoading.value = false
-                        if (response.isSuccessful) {
-                            Log.d("Followers Fragment", "index : $index")
-                            _dataPerson.value = response.body()
-                        }
+                        if (response.isSuccessful) _dataPerson.value = response.body()
                     }
 
                     override fun onFailure(call: Call<List<FollowersResponseItem>>, t: Throwable) {

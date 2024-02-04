@@ -47,8 +47,6 @@ class HomeFragment : Fragment() {
         BadgeUtils.attachBadgeDrawable(badgeDrawableNotification, toolbar, R.id.notification_menu)
     }
 
-
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

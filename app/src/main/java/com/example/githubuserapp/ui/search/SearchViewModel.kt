@@ -3,9 +3,9 @@ package com.example.githubuserapp.ui.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserapp.response.ItemsItem
-import com.example.githubuserapp.response.SearchResponse
-import com.example.githubuserapp.retrofit.ApiConfig
+import com.example.githubuserapp.data.remote.response.ItemsItem
+import com.example.githubuserapp.data.remote.response.SearchResponse
+import com.example.githubuserapp.data.remote.retrofit.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuserapp.adapter.ListFollowingFollowerAdapter
+import com.example.githubuserapp.ui.adapter.ListFollowingFollowerAdapter
 import com.example.githubuserapp.databinding.FragmentFollowersBinding
-import com.example.githubuserapp.response.FollowersResponseItem
+import com.example.githubuserapp.data.remote.response.FollowersResponseItem
 
 class FollowItemsFragment : Fragment() {
     companion object {

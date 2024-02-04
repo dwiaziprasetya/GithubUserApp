@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubuserapp.R
-import com.example.githubuserapp.adapter.SearchAdapter
+import com.example.githubuserapp.ui.adapter.SearchAdapter
 import com.example.githubuserapp.databinding.FragmentSearchBinding
-import com.example.githubuserapp.response.ItemsItem
+import com.example.githubuserapp.data.remote.response.ItemsItem
 
 class SearchFragment : Fragment() {
 

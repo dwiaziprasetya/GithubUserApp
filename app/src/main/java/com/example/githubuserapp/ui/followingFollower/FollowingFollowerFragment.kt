@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.githubuserapp.R
-import com.example.githubuserapp.adapter.SectionsPagerAdapter
+import com.example.githubuserapp.ui.adapter.SectionsPagerAdapter
 import com.example.githubuserapp.databinding.FragmentFollowingFollowerBinding
 import com.example.githubuserapp.ui.detail.DetailFragment
 import com.google.android.material.tabs.TabLayout
@@ -19,14 +19,6 @@ class FollowingFollowerFragment : Fragment() {
 
     private var _binding: FragmentFollowingFollowerBinding? = null
     private val binding get() = _binding!!
-
-    companion object {
-        @StringRes
-        private val TAB_TITLES = intArrayOf(
-            R.string.followers_template,
-            R.string.following_template,
-        )
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,5 +59,13 @@ class FollowingFollowerFragment : Fragment() {
 
     private fun handleNavigationClick(){
         findNavController().popBackStack()
+    }
+
+    companion object {
+        @StringRes
+        private val TAB_TITLES = intArrayOf(
+            R.string.followers_template,
+            R.string.following_template,
+        )
     }
 }
