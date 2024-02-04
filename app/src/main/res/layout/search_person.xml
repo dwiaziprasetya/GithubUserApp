@@ -30,7 +30,8 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/iv_search_person"
         app:layout_constraintStart_toStartOf="@+id/iv_search_person"
-        app:layout_constraintTop_toBottomOf="@id/iv_search_person" />
+        app:layout_constraintTop_toBottomOf="@id/iv_search_person"
+        tools:ignore="TextSizeCheck" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,6 +42,7 @@
         android:textColor="@color/grey_2"
         app:layout_constraintEnd_toEndOf="@+id/search_person_template_1"
         app:layout_constraintStart_toStartOf="@+id/search_person_template_1"
-        app:layout_constraintTop_toBottomOf="@+id/search_person_template_1"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_person_template_1"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

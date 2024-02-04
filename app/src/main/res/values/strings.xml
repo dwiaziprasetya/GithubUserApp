@@ -47,4 +47,8 @@
     <string name="home_template_1">All caught up!</string>
     <string name="home_template_2">Take a break, write some code, and do what you\ndo best.</string>
 
+    <!-- Content Description -->
+    <string name="nested_scroll_view_desc">NestedScroll View</string>
+    <string name="tab_layout_desc">Tab Layout</string>
+
 </resources>

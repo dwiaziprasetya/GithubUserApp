@@ -58,8 +58,9 @@
             android:id="@+id/searchBar"
             app:layout_scrollFlags="noScroll"
             app:backgroundTint="@color/grey_3"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_width="match_parent" />
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <com.google.android.material.search.SearchView
