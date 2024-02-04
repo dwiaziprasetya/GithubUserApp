@@ -11,20 +11,13 @@ import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
-import com.example.githubuserapp.databinding.FragmentProfileBinding
 import com.example.githubuserapp.data.remote.response.DetailResponse
+import com.example.githubuserapp.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-
-    companion object {
-        const val USERNAME = "username"
-        const val TAB_POSITION = "tab position"
-        const val FOLLOWERS = 0
-        const val FOLLOWING = 1
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,6 +58,14 @@ class ProfileFragment : Fragment() {
             mBundle.putInt(TAB_POSITION, FOLLOWING)
             view.findNavController().navigate(R.id.action_navigation_profile_to_navigation_following_follower, mBundle)
         }
+
+//        binding.toolbarProfile.setOnClickListener { menuItem ->
+//            when (menuItem.id) {
+//                R.id.settings_menu -> {
+//                    Toast.makeText(requireActivity(), "Settings", Toast.LENGTH_SHORT).show()
+//                }
+//            }
+//        }
     }
 
     private fun setData(person: DetailResponse){
@@ -100,5 +101,12 @@ class ProfileFragment : Fragment() {
 
     private fun showConstraintLayout(isSetting: Boolean) {
         binding.cnsProfile.visibility = if (isSetting) View.VISIBLE else View.GONE
+    }
+
+    companion object {
+        const val USERNAME = "username"
+        const val TAB_POSITION = "tab position"
+        const val FOLLOWERS = 0
+        const val FOLLOWING = 1
     }
 }
