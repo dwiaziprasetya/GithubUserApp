@@ -16,7 +16,6 @@ import com.example.githubuserapp.R
 import com.example.githubuserapp.data.remote.response.DetailResponse
 import com.example.githubuserapp.databinding.FragmentDetailBinding
 
-@Suppress("DEPRECATION")
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
@@ -67,8 +66,10 @@ class DetailFragment : Fragment() {
             view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
         }
 
-        binding.appBarProfile.setOnMenuItemClickListener {
-            when(it.itemId) {
+        var favourite = false
+
+        binding.appBarProfile.setOnMenuItemClickListener { menuItem ->
+            when(menuItem.itemId) {
                 R.id.share_menu -> {
                     val url = "https://api.github.com/users/"
                     val shareIntent = Intent().apply {
@@ -79,7 +80,12 @@ class DetailFragment : Fragment() {
                     startActivity(Intent.createChooser(shareIntent, null))
                     true
                 } R.id.favourite_menu -> {
-                    // Handle menjadi icon favourite merah
+                    favourite = !favourite
+                    if (favourite) {
+                        menuItem.setIcon(R.drawable.icon_favourite_fill)
+                    } else {
+                        menuItem.setIcon(R.drawable.icon_favourite)
+                    }
                     true
                 } else -> false
             }

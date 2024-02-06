@@ -8,6 +8,7 @@
     tools:context=".ui.profile.ProfileFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:background="?attr/colorOnPrimary"
         app:liftOnScrollColor="@color/grey_3"
         android:layout_width="match_parent"
