@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/notification_menu"
-        android:title="@string/notification_menu"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/notification_icon"/>
+        android:id="@+id/favourite_menu"
+        android:title="@string/favourite_menu"
+        android:icon="@drawable/icon_favourite"
+        app:showAsAction="always"/>
     <item
-        android:id="@+id/refresh_menu"
-        android:title="@string/menu_refresh"
-        app:showAsAction="never"/>
+        android:id="@+id/share_menu"
+        android:title="@string/share_menu"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/share_icon"/>
 </menu>

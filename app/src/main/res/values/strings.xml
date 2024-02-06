@@ -32,6 +32,8 @@
     <string name="edit_profile_menu">Edit Profile</string>
     <string name="hamburger_menu">Hamburger</string>
     <string name="notification_menu">Notification</string>
+    <string name="favourite_menu">Favourite</string>
+    <string name="favourite_menu_fill">Favourite</string>
 
     <!-- Template Resource -->
     <string name="repository_template">Repository</string>
