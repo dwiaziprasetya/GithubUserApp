@@ -83,8 +83,10 @@ class DetailFragment : Fragment() {
                     favourite = !favourite
                     if (favourite) {
                         menuItem.setIcon(R.drawable.icon_favourite_fill)
+                        // Add user
                     } else {
                         menuItem.setIcon(R.drawable.icon_favourite)
+                        // delete user
                     }
                     true
                 } else -> false
