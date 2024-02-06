@@ -1,5 +1,6 @@
 package com.example.githubuserapp.ui.detail
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +13,10 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
-import com.example.githubuserapp.databinding.FragmentDetailBinding
 import com.example.githubuserapp.data.remote.response.DetailResponse
+import com.example.githubuserapp.databinding.FragmentDetailBinding
 
+@Suppress("DEPRECATION")
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
@@ -30,6 +32,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
         val personUsername = DetailFragmentArgs.fromBundle(arguments as Bundle).data
         val detailViewModel = ViewModelProvider(this, DetailViewModelFactory(personUsername))[DetailViewModel::class.java]
 
@@ -62,6 +65,24 @@ class DetailFragment : Fragment() {
             mBundle.putString(USERNAME, personUsername)
             mBundle.putInt(TAB_POSITION, 1)
             view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
+        }
+
+        binding.appBarProfile.setOnMenuItemClickListener {
+            when(it.itemId) {
+                R.id.share_menu -> {
+                    val url = "https://api.github.com/users/"
+                    val shareIntent = Intent().apply {
+                        action =Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, url+personUsername)
+                        type = "text/plain"
+                    }
+                    startActivity(Intent.createChooser(shareIntent, null))
+                    true
+                } R.id.favourite_menu -> {
+                    // Handle menjadi icon favourite merah
+                    true
+                } else -> false
+            }
         }
     }
 
