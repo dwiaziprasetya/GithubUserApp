@@ -53,6 +53,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.core:core-splashscreen:1.1.0-alpha02")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
