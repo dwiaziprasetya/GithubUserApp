@@ -32,13 +32,15 @@ class SettingsActivity : AppCompatActivity() {
             ViewModelFactory(pref)
         )[MainViewModel::class.java]
 
-        mainViewModel.getThemeSettings().observe(this) {
-            showDialogAlertTheme()
-        }
 
-        binding.btnTheme.setOnClickListener {
-            mainViewModel.saveThemeSetting(checkedItem)
-        }
+        // Dark Mode (pending)
+//        mainViewModel.getThemeSettings().observe(this) {
+//            showDialogAlertTheme()
+//        }
+//
+//        binding.btnTheme.setOnClickListener {
+//            mainViewModel.saveThemeSetting(checkedItem)
+//        }
 
         binding.toolbarProfile.setOnClickListener { onBackPressed() }
     }
