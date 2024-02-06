@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.githubuserapp"
-        minSdk = 29
+        minSdk = 31
         //noinspection OldTargetApi
         targetSdk = 33
         versionCode = 1
