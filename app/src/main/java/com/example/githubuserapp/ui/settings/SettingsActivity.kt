@@ -1,10 +1,14 @@
 package com.example.githubuserapp.ui.settings
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ViewModelProvider
+import com.example.githubuserapp.MainViewModel
+import com.example.githubuserapp.SettingPreferences
+import com.example.githubuserapp.ViewModelFactory
+import com.example.githubuserapp.dataStore
 import com.example.githubuserapp.databinding.ActivitySettingsBinding
 
 @Suppress("DEPRECATION")
@@ -22,18 +26,24 @@ class SettingsActivity : AppCompatActivity() {
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState != null){
-            checkedItem = savedInstanceState.getInt(KEY_CHECKED)
+        val pref = SettingPreferences.getInstance(application.dataStore)
+        val mainViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(pref)
+        )[MainViewModel::class.java]
+
+        mainViewModel.getThemeSettings().observe(this) {
+            showDialogAlertTheme()
         }
 
         binding.btnTheme.setOnClickListener {
-            showDialogAlertTheme()
+            mainViewModel.saveThemeSetting(checkedItem)
         }
+
         binding.toolbarProfile.setOnClickListener { onBackPressed() }
     }
 
     private fun showDialogAlertTheme(){
-        Log.d("AlertDialog", "checked item = $checkedItem")
         val builder = AlertDialog.Builder(this@SettingsActivity)
         builder
             .setTitle("Theme")
@@ -41,26 +51,23 @@ class SettingsActivity : AppCompatActivity() {
             .setSingleChoiceItems(
                 arrayOf(
                     "Light",
-                    "Dark"
+                    "Dark",
+                    "Follow system"
                 )
                 , checkedItem) { dialog, which ->
-                checkedItem = which
+                    checkedItem = which
                     when(which) {
-                        1 -> {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        }
                         0 -> {
                             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                        } 1 -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                        } 2 -> {
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                         }
                     }
                 dialog.dismiss()
             }
             .create()
             .show()
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        outState.putInt(KEY_CHECKED, checkedItem)
-        super.onSaveInstanceState(outState)
     }
 }
