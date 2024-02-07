@@ -25,6 +25,7 @@ android {
         val properties = Properties()
         properties.load(project.rootProject.file("local.properties").inputStream())
 
+        buildConfigField("String", "BASE_URL_USER", "\"https://api.github.com/users/\"")
         buildConfigField("String", "TOKEN", "\"${properties.getProperty("TOKEN")}\"")
         buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
         buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")

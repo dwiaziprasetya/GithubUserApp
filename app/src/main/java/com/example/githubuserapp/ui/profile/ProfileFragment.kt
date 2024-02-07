@@ -1,5 +1,6 @@
 package com.example.githubuserapp.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -66,6 +67,15 @@ class ProfileFragment : Fragment() {
                     true
                 } R.id.favourite_menu-> {
                     view.findNavController().navigate(R.id.action_navigation_profile_to_favouriteFragment)
+                    true
+                } R.id.share_menu -> {
+                    val url = BuildConfig.BASE_URL_USER
+                    val shareIntent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_TEXT, url+BuildConfig.PROFILE_USERNAME)
+                        type = "text/plain"
+                    }
+                    startActivity(Intent.createChooser(shareIntent, null))
                     true
                 } else -> false
             }

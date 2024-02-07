@@ -86,9 +86,9 @@ class DetailFragment : Fragment() {
         binding.appBarProfile.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
                 R.id.share_menu -> {
-                    val url = "https://api.github.com/users/"
+                    val url = BuildConfig.BASE_URL_USER
                     val shareIntent = Intent().apply {
-                        action =Intent.ACTION_SEND
+                        action = Intent.ACTION_SEND
                         putExtra(Intent.EXTRA_TEXT, url+personUsername)
                         type = "text/plain"
                     }
