@@ -2,10 +2,12 @@ package com.example.githubuserapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.githubuserapp.databinding.ItemPersonListBinding
 import com.example.githubuserapp.data.remote.response.FollowersResponseItem
+import com.example.githubuserapp.databinding.ItemPersonListBinding
+import com.example.githubuserapp.ui.followingFollower.FollowingFollowerFragmentDirections
 
 class ListFollowingFollowerAdapter(private val list: ArrayList<FollowersResponseItem>): RecyclerView.Adapter<ListFollowingFollowerAdapter.ListViewHolder>() {
     class ListViewHolder(private val binding: ItemPersonListBinding): RecyclerView.ViewHolder(binding.root) {
@@ -15,6 +17,11 @@ class ListFollowingFollowerAdapter(private val list: ArrayList<FollowersResponse
             Glide.with(itemView)
                 .load(person.avatarUrl)
                 .into(binding.tvPersonAvatar)
+            binding.cardItem.setOnClickListener {
+                val action = FollowingFollowerFragmentDirections.actionNavigationFollowingFollowerToNavigationDetail()
+                action.data = person.login
+                it.findNavController().navigate(action)
+            }
         }
     }
 
