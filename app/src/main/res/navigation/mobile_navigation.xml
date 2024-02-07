@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.example.githubuserapp.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home"/>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -27,6 +27,14 @@
         <action
             android:id="@+id/action_navigation_profile_to_settingsActivity"
             app:destination="@id/settingsActivity" />
+        <action
+            android:id="@+id/action_navigation_profile_to_favouriteFragment"
+            app:destination="@id/favouriteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
 
     <fragment
@@ -80,5 +88,19 @@
         android:name="com.example.githubuserapp.ui.settings.SettingsActivity"
         android:label="activity_settings"
         tools:layout="@layout/activity_settings" />
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.githubuserapp.ui.favourite.FavouriteFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_favouriteFragment_to_navigation_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 
 </navigation>

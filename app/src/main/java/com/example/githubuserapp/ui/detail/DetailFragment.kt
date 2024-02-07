@@ -6,20 +6,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
+import com.example.githubuserapp.FavouriteViewModelFactory
 import com.example.githubuserapp.R
+import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.data.remote.response.DetailResponse
 import com.example.githubuserapp.databinding.FragmentDetailBinding
+import com.example.githubuserapp.ui.detail.add.AddFavouriteViewModel
 
 class DetailFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
+    private lateinit var detailViewModel: DetailViewModel
+    private lateinit var addFavouriteViewModel: AddFavouriteViewModel
+    private lateinit var personUsername: String
+    private var favourite: Favourite? = null
+    private var checkFavourite = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,8 +41,9 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val personUsername = DetailFragmentArgs.fromBundle(arguments as Bundle).data
-        val detailViewModel = ViewModelProvider(this, DetailViewModelFactory(personUsername))[DetailViewModel::class.java]
+        personUsername = DetailFragmentArgs.fromBundle(arguments as Bundle).data
+        detailViewModel = ViewModelProvider(this, DetailViewModelFactory(personUsername))[DetailViewModel::class.java]
+        addFavouriteViewModel = obtainViewModel(this@DetailFragment)
 
         detailViewModel.dataPerson.observe(viewLifecycleOwner) {
             setData(it)
@@ -66,7 +76,12 @@ class DetailFragment : Fragment() {
             view.findNavController().navigate(R.id.action_navigation_detail_to_navigation_following_follower, mBundle)
         }
 
-        var favourite = false
+        addFavouriteViewModel.isUserFavourite(personUsername).observe(viewLifecycleOwner) { isFavourite ->
+            checkFavourite = isFavourite
+            if (isFavourite) {
+                binding.appBarProfile.menu.findItem(R.id.favourite_menu).setIcon(R.drawable.icon_favourite_fill)
+            }
+        }
 
         binding.appBarProfile.setOnMenuItemClickListener { menuItem ->
             when(menuItem.itemId) {
@@ -80,13 +95,20 @@ class DetailFragment : Fragment() {
                     startActivity(Intent.createChooser(shareIntent, null))
                     true
                 } R.id.favourite_menu -> {
-                    favourite = !favourite
-                    if (favourite) {
-                        menuItem.setIcon(R.drawable.icon_favourite_fill)
+                    checkFavourite = !checkFavourite
+                    if (checkFavourite) {
                         // Add user
+                        addFavouriteViewModel.insert(favourite as Favourite)
+                        Toast.makeText(requireActivity(), "$personUsername added to favourites",
+                            Toast.LENGTH_SHORT)
+                            .show()
                     } else {
                         menuItem.setIcon(R.drawable.icon_favourite)
                         // delete user
+                        addFavouriteViewModel.delete(favourite as Favourite)
+                        Toast.makeText(requireActivity(), "$personUsername removed from favourites",
+                            Toast.LENGTH_SHORT)
+                            .show()
                     }
                     true
                 } else -> false
@@ -95,11 +117,13 @@ class DetailFragment : Fragment() {
     }
 
     private fun setData(person : DetailResponse) {
-
         // default value
         fun TextView.setTextOrDash(value : CharSequence?) {
             text = value ?: "-"
         }
+
+        favourite = Favourite(person.login, person.avatarUrl)
+
 
         val imageUrl = BuildConfig.BASE_URL_AVATAR_URL
 
@@ -129,6 +153,11 @@ class DetailFragment : Fragment() {
 
     private fun handleNavigationClick(){
         findNavController().popBackStack()
+    }
+
+    private fun obtainViewModel(fragment: Fragment): AddFavouriteViewModel {
+        val factory = FavouriteViewModelFactory.getInstance(fragment.requireActivity().application)
+        return ViewModelProvider(fragment, factory)[(AddFavouriteViewModel::class.java)]
     }
 
     companion object {

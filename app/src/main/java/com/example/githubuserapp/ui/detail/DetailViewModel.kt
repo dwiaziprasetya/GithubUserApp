@@ -10,6 +10,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DetailViewModel(username: String) : ViewModel() {
+
     private val _dataPerson = MutableLiveData<DetailResponse>()
     val dataPerson: LiveData<DetailResponse> = _dataPerson
 

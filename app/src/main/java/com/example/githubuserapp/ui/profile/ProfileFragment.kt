@@ -64,6 +64,9 @@ class ProfileFragment : Fragment() {
                 R.id.settings_menu -> {
                     view.findNavController().navigate(R.id.action_navigation_profile_to_settingsActivity)
                     true
+                } R.id.favourite_menu-> {
+                    view.findNavController().navigate(R.id.action_navigation_profile_to_favouriteFragment)
+                    true
                 } else -> false
             }
         }

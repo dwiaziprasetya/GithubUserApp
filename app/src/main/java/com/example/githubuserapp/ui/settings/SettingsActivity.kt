@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import com.example.githubuserapp.MainViewModel
+import com.example.githubuserapp.MainViewModelFactory
 import com.example.githubuserapp.SettingPreferences
-import com.example.githubuserapp.ViewModelFactory
 import com.example.githubuserapp.dataStore
 import com.example.githubuserapp.databinding.ActivitySettingsBinding
 
@@ -29,7 +29,7 @@ class SettingsActivity : AppCompatActivity() {
         val pref = SettingPreferences.getInstance(application.dataStore)
         val mainViewModel = ViewModelProvider(
             this,
-            ViewModelFactory(pref)
+            MainViewModelFactory(pref)
         )[MainViewModel::class.java]
 
 
