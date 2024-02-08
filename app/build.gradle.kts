@@ -14,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.githubuserapp"
-        minSdk = 31
+        minSdk = 30
         //noinspection OldTargetApi
         targetSdk = 33
         versionCode = 1
@@ -25,7 +25,7 @@ android {
         val properties = Properties()
         properties.load(project.rootProject.file("local.properties").inputStream())
 
-        buildConfigField("String", "BASE_URL_USER", "\"https://api.github.com/users/\"")
+        buildConfigField("String", "BASE_URL_USER", "\"https://github.com/\"")
         buildConfigField("String", "TOKEN", "\"${properties.getProperty("TOKEN")}\"")
         buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
         buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")
