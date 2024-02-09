@@ -1,8 +1,9 @@
-package com.example.githubuserapp
+package com.example.githubuserapp.helper
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.githubuserapp.MainViewModelFactory
 import com.example.githubuserapp.ui.detail.add.AddFavouriteViewModel
 import com.example.githubuserapp.ui.favourite.FavouriteViewModel
 

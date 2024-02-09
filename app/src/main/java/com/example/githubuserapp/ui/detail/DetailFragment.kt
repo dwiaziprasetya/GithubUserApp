@@ -13,7 +13,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
-import com.example.githubuserapp.FavouriteViewModelFactory
+import com.example.githubuserapp.helper.FavouriteViewModelFactory
 import com.example.githubuserapp.R
 import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.data.remote.response.DetailResponse

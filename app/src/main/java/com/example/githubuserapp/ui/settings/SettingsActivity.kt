@@ -1,6 +1,7 @@
 package com.example.githubuserapp.ui.settings
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -16,10 +17,7 @@ class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
     private var checkedItem = 0
-
-    companion object {
-        private const val KEY_CHECKED = "checked_item"
-    }
+    private lateinit var mainViewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,20 +25,19 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val pref = SettingPreferences.getInstance(application.dataStore)
-        val mainViewModel = ViewModelProvider(
-            this,
-            MainViewModelFactory(pref)
-        )[MainViewModel::class.java]
+        mainViewModel = ViewModelProvider(this, MainViewModelFactory(pref))[MainViewModel::class.java]
 
+        mainViewModel.getThemeSetting().observe(this) {
+            checkedItem = it
+            Log.d("HEI", "$it")
+            when(it){
+                0 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                2 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            }
+        }
 
-        // Dark Mode (pending)
-//        mainViewModel.getThemeSettings().observe(this) {
-//            showDialogAlertTheme()
-//        }
-//
-//        binding.btnTheme.setOnClickListener {
-//            mainViewModel.saveThemeSetting(checkedItem)
-//        }
+        binding.btnTheme.setOnClickListener { showDialogAlertTheme() }
 
         binding.toolbarProfile.setOnClickListener { onBackPressed() }
     }
@@ -57,16 +54,7 @@ class SettingsActivity : AppCompatActivity() {
                     "Follow system"
                 )
                 , checkedItem) { dialog, which ->
-                    checkedItem = which
-                    when(which) {
-                        0 -> {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                        } 1 -> {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                        } 2 -> {
-                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                        }
-                    }
+                mainViewModel.saveThemeSetting(which)
                 dialog.dismiss()
             }
             .create()

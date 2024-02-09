@@ -1,6 +1,7 @@
 package com.example.githubuserapp
 
 import android.content.Context
+import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -13,15 +14,17 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class SettingPreferences private constructor(private val dataStore: DataStore<Preferences>){
 
     private val THEME_KEY = intPreferencesKey("theme_settings")
+    private val DEFAULT_NUMBER = 0
 
     fun getThemeSetting(): Flow<Int> {
         return dataStore.data.map { preferences ->
-            preferences[THEME_KEY] ?: 0
+            preferences[THEME_KEY] ?: DEFAULT_NUMBER
         }
     }
     suspend fun saveThemeSetting(checkedItem: Int) {
         dataStore.edit { preferences ->
             preferences[THEME_KEY] = checkedItem
+            Log.d("SettingPreferences", "Theme setting saved: $checkedItem")
         }
     }
 

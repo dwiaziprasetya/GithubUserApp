@@ -34,6 +34,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="invisible"
             android:id="@+id/cns_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent">

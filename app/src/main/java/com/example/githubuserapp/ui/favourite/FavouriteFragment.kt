@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuserapp.FavouriteViewModelFactory
+import com.example.githubuserapp.helper.FavouriteViewModelFactory
 import com.example.githubuserapp.databinding.FragmentFavouriteBinding
 import com.example.githubuserapp.ui.adapter.FavouriteAdapter
 
