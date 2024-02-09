@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomDialogTheme" parent="android:Theme.Material.Light.Dialog.NoActionBar">
+        <item name="android:colorAccent">?attr/colorPrimary</item>
+    </style>
+</resources>

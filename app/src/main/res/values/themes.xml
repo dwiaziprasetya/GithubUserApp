@@ -18,14 +18,14 @@
 
     <!-- Toolbar text -->
     <style name="toolbar_text">
-        <item name="android:fontFamily">@font/poppinsmedium</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
 
     <!-- Toolbar text following follower-->
     <style name="toolbar_text_following_followers">
-        <item name="android:fontFamily">@font/poppinsmedium</item>
+        <item name="android:fontFamily">@font/poppinsregular</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
     </style>

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import com.example.githubuserapp.MainViewModel
 import com.example.githubuserapp.MainViewModelFactory
+import com.example.githubuserapp.R
 import com.example.githubuserapp.SettingPreferences
 import com.example.githubuserapp.dataStore
 import com.example.githubuserapp.databinding.ActivitySettingsBinding
@@ -40,7 +41,7 @@ class SettingsActivity : AppCompatActivity() {
     }
 
     private fun showDialogAlertTheme(){
-        val builder = AlertDialog.Builder(this@SettingsActivity)
+        val builder = AlertDialog.Builder(this@SettingsActivity, R.style.CustomDialogTheme)
         builder
             .setTitle("Theme")
             .setNegativeButton("CANCEL") { _, _ -> }
