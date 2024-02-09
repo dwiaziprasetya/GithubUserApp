@@ -2,23 +2,32 @@ package com.example.githubuserapp.ui.profile
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
+import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.data.remote.response.DetailResponse
 import com.example.githubuserapp.databinding.FragmentProfileBinding
+import com.example.githubuserapp.helper.FavouriteViewModelFactory
+import com.example.githubuserapp.ui.favourite.FavouriteViewModel
+import com.google.android.material.badge.BadgeDrawable
+import com.google.android.material.badge.BadgeUtils
+import com.google.android.material.badge.ExperimentalBadgeUtils
 
-class ProfileFragment : Fragment() {
+@ExperimentalBadgeUtils class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+    private lateinit var favourite: Favourite
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +41,16 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        favourite = Favourite()
         val profileViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ProfileViewModel::class.java]
+        val itemFavourite = obtainViewModel(this@ProfileFragment)
+
+        itemFavourite.getAllFavourites().observe(viewLifecycleOwner) {
+            Log.d("Jumlah Item", "${it.size}")
+            setBadgeIconFavourite(it.size)
+        }
+
+
 
         profileViewModel.dataProfilePerson.observe(viewLifecycleOwner) {
             setData(it)
@@ -115,6 +133,22 @@ class ProfileFragment : Fragment() {
 
     private fun showConstraintLayout(isSetting: Boolean) {
         binding.cnsProfile.visibility = if (isSetting) View.VISIBLE else View.GONE
+    }
+
+    private fun obtainViewModel(fragment: Fragment): FavouriteViewModel {
+        val factory = FavouriteViewModelFactory.getInstance(fragment.requireActivity().application)
+        return ViewModelProvider(fragment, factory)[(FavouriteViewModel::class.java)]
+    }
+
+    private fun setBadgeIconFavourite(number: Int){
+        val backgroundColor = ContextCompat.getColor(requireContext(), R.color.red)
+        val toolbar = binding.toolbarProfile
+        val badgeDrawable = BadgeDrawable.create(requireActivity()).apply {
+            isVisible = true
+            this.backgroundColor = backgroundColor
+            this.number = number
+        }
+        BadgeUtils.attachBadgeDrawable(badgeDrawable, toolbar, R.id.favourite_menu)
     }
 
     companion object {
