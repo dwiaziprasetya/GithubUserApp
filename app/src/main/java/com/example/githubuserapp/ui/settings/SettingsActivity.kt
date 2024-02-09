@@ -1,7 +1,6 @@
 package com.example.githubuserapp.ui.settings
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -29,7 +28,6 @@ class SettingsActivity : AppCompatActivity() {
 
         mainViewModel.getThemeSetting().observe(this) {
             checkedItem = it
-            Log.d("HEI", "$it")
             when(it){
                 0 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 1 -> AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
@@ -38,7 +36,6 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         binding.btnTheme.setOnClickListener { showDialogAlertTheme() }
-
         binding.toolbarProfile.setOnClickListener { onBackPressed() }
     }
 

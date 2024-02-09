@@ -18,13 +18,13 @@
     <style name="toolbar_text">
         <item name="android:fontFamily">@font/poppinsmedium</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">20sp</item>\
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="toolbar_text_following_followers">
         <item name="android:fontFamily">@font/poppinsmedium</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">18sp</item>\
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="active_bottom_nav" parent="@style/Widget.Material3.BottomNavigationView.ActiveIndicator">
