@@ -6,7 +6,6 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.databinding.ItemFavouriteBinding
 import com.example.githubuserapp.helper.FavouriteDiffCallback
@@ -25,7 +24,6 @@ class FavouriteAdapter: RecyclerView.Adapter<FavouriteAdapter.FavouriteViewHolde
 
     inner class FavouriteViewHolder(private val binding: ItemFavouriteBinding) :
     RecyclerView.ViewHolder(binding.root){
-        val baseAvatarUrl = BuildConfig.BASE_URL_AVATAR_URL
         fun bind(favourite: Favourite) {
             with (binding) {
                 tvPersonName.text = favourite.username

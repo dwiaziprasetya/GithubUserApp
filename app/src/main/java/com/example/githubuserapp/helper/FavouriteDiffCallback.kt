@@ -5,6 +5,7 @@ import com.example.githubuserapp.data.local.entity.Favourite
 
 class FavouriteDiffCallback(private val oldFavouriteList: List<Favourite>,
     private val newFavouriteList: List<Favourite>): DiffUtil.Callback() {
+
     override fun getOldListSize(): Int = oldFavouriteList.size
 
     override fun getNewListSize(): Int = newFavouriteList.size
