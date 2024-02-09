@@ -22,8 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val currentMode = AppCompatDelegate.getDefaultNightMode()
-        if (currentMode == AppCompatDelegate.MODE_NIGHT_YES) setTheme(R.style.Theme_GithubUserApp_MySplash_Night)
         installSplashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
