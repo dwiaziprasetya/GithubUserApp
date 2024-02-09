@@ -13,28 +13,34 @@
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+        <item name="colorSurfaceContainerHigh">#e6e9ee</item>
     </style>
 
+    <!-- Toolbar text -->
     <style name="toolbar_text">
         <item name="android:fontFamily">@font/poppinsmedium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">20sp</item>
     </style>
 
+    <!-- Toolbar text following follower-->
     <style name="toolbar_text_following_followers">
         <item name="android:fontFamily">@font/poppinsmedium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">18sp</item>
     </style>
 
+    <!-- Active bottom navigation -->
     <style name="active_bottom_nav" parent="@style/Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">?attr/colorOnPrimary</item>
     </style>
-    
+
+    <!-- Label text bottom navigation inactive -->
     <style name="label_text_bottom_nav_inactive" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">11sp</item>
     </style>
 
+    <!-- Label text bottom navigation active -->
     <style name="label_text_bottom_nav_active." parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textSize">11sp</item>
     </style>

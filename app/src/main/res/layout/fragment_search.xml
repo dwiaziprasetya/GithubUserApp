@@ -46,7 +46,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
-        app:liftOnScrollColor="@color/grey_3"
+        app:liftOnScrollColor="@android:color/transparent"
         android:layout_height="75dp"
         android:id="@+id/app_bar_search"
         android:background="?attr/colorOnPrimary"
@@ -55,9 +55,10 @@
         <com.google.android.material.search.SearchBar
             android:background="?attr/colorOnPrimary"
             android:hint="@string/searchbar_hint"
+            android:backgroundTint="?attr/colorSurfaceContainerHigh"
+            app:navigationIconTint="@color/grey"
             android:id="@+id/searchBar"
             app:layout_scrollFlags="noScroll"
-            app:backgroundTint="@color/grey_3"
             android:layout_height="48dp"
             android:layout_width="match_parent" />
 
@@ -65,11 +66,10 @@
 
     <com.google.android.material.search.SearchView
         android:hint="@string/searchbar_hint"
-        app:queryHint="@string/searchbar_hint"
         android:id="@+id/searchView"
-        app:backgroundTint="@color/grey_3"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
+        app:animateNavigationIcon="true"
         app:layout_anchor="@id/searchBar">
     </com.google.android.material.search.SearchView>
 

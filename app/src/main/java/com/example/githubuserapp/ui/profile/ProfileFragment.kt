@@ -145,6 +145,7 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
         val toolbar = binding.toolbarProfile
         val badgeDrawable = BadgeDrawable.create(requireActivity()).apply {
             isVisible = true
+            badgeTextColor = ContextCompat.getColor(requireContext(), R.color.white)
             this.backgroundColor = backgroundColor
             this.number = number
         }
