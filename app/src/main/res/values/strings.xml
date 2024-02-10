@@ -48,10 +48,10 @@
     <string name="search_person_template_two">Search all of GitHub for People,\n Repositories, and Repositories</string>
     <string name="home_template_1">Welcome to Github</string>
     <string name="home_template_2">Take a break, write some code, and do what you\ndo best.</string>
+    <string name="theme_sample">Theme</string>
 
     <!-- Content Description -->
     <string name="nested_scroll_view_desc">NestedScroll View</string>
     <string name="tab_layout_desc">Tab Layout</string>
-    <string name="theme_sample">Theme</string>
 
 </resources>
