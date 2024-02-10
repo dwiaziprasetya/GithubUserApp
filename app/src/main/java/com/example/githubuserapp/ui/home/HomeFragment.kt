@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.githubuserapp.R
 import com.example.githubuserapp.databinding.FragmentHomeBinding
-import com.google.android.material.badge.BadgeDrawable
-import com.google.android.material.badge.BadgeUtils
 
 class HomeFragment : Fragment() {
 
@@ -29,22 +27,27 @@ class HomeFragment : Fragment() {
     @SuppressLint("UnsafeOptInUsageError")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        // Icon Badge
-        val backgroundColor = ContextCompat.getColor(requireContext(), R.color.red)
-        val toolbar = binding.toolbar
-        val badgeDrawableMessage = BadgeDrawable.create(requireActivity()).apply {
-            isVisible = true
-            this.backgroundColor = backgroundColor
-            number = 5
+        binding.toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.plus_menu -> {
+                    Toast
+                        .makeText(
+                            requireActivity(),
+                            "developers has not updated this feature",
+                            Toast.LENGTH_SHORT
+                        )
+                        .show()
+                    true
+                } R.id.message_menu -> {
+                    Toast
+                        .makeText(requireActivity(),
+                            "developers has not updated this feature",
+                            Toast.LENGTH_SHORT)
+                        .show()
+                    true
+                } else -> false
+            }
         }
-        val badgeDrawableNotification = BadgeDrawable.create(requireActivity()).apply {
-            isVisible = true
-            this.backgroundColor = backgroundColor
-            number = 5
-        }
-        BadgeUtils.attachBadgeDrawable(badgeDrawableMessage, toolbar, R.id.message_menu)
-        BadgeUtils.attachBadgeDrawable(badgeDrawableNotification, toolbar, R.id.notification_menu)
     }
 
     override fun onDestroyView() {

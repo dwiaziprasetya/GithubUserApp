@@ -50,8 +50,6 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
             setBadgeIconFavourite(it.size)
         }
 
-
-
         profileViewModel.dataProfilePerson.observe(viewLifecycleOwner) {
             setData(it)
         }

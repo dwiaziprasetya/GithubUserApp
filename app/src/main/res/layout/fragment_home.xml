@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="75dp"
         android:background="?attr/colorOnPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,6 +19,8 @@
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
+            app:menu="@menu/home_menu"
+            app:title="@string/title_home"
             android:layout_height="?attr/actionBarSize"
             app:titleTextAppearance="@style/toolbar_text"/>
 
@@ -28,21 +30,19 @@
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:visibility="invisible"
-        android:src="@drawable/home_image_template"
+        android:importantForAccessibility="no"
+        android:src="@drawable/octocat"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
-        app:layout_constraintVertical_bias="0.35000002"
-        android:importantForAccessibility="no" />
+        app:layout_constraintVertical_bias="0.23000002" />
 
     <TextView
         android:id="@+id/home_template_1"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsbold"
-        android:visibility="invisible"
         android:text="@string/home_template_1"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -54,11 +54,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:fontFamily="@font/poppinsmedium"
+        android:fontFamily="@font/poppinsregular"
         android:text="@string/home_template_2"
         android:textAlignment="center"
-        android:textColor="@color/grey_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_template_1"

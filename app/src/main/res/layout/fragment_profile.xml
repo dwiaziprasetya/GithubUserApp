@@ -34,7 +34,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:visibility="invisible"
             android:id="@+id/cns_profile"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -151,7 +150,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
-                android:background="@color/grey_2"
+                android:background="@color/grey_3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_followers_template"/>
