@@ -16,6 +16,7 @@ import com.example.githubuserapp.BuildConfig
 import com.example.githubuserapp.R
 import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.data.remote.response.DetailResponse
+import com.example.githubuserapp.data.repository.ProfileRepository
 import com.example.githubuserapp.databinding.FragmentProfileBinding
 import com.example.githubuserapp.helper.FavouriteViewModelFactory
 import com.example.githubuserapp.ui.favourite.FavouriteViewModel
@@ -42,7 +43,8 @@ import com.google.android.material.badge.ExperimentalBadgeUtils
         super.onViewCreated(view, savedInstanceState)
 
         favourite = Favourite()
-        val profileViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ProfileViewModel::class.java]
+        val profileRepository = ProfileRepository()
+        val profileViewModel = ViewModelProvider(this, ProfileViewModelFactory(profileRepository))[ProfileViewModel::class.java]
         val itemFavourite = obtainViewModel(this@ProfileFragment)
 
         itemFavourite.getAllFavourites().observe(viewLifecycleOwner) {

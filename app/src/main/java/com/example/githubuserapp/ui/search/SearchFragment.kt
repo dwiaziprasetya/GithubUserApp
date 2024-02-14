@@ -73,7 +73,6 @@ class SearchFragment : Fragment() {
         binding.rvPersonList.layoutManager = LinearLayoutManager(requireActivity())
     }
 
-
     private fun setData(person : List<ItemsItem>) {
         list.clear()
         list.addAll(person)

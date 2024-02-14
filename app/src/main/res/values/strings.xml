@@ -53,5 +53,6 @@
     <!-- Content Description -->
     <string name="nested_scroll_view_desc">NestedScroll View</string>
     <string name="tab_layout_desc">Tab Layout</string>
+    <string name="searchviewdescription">searchViewDescription</string>
 
 </resources>

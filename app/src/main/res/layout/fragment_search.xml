@@ -6,6 +6,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <com.google.android.material.search.SearchView
+        android:id="@+id/searchView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:animateNavigationIcon="true"
+        app:layout_anchor="@id/searchBar"
+        android:contentDescription="@string/searchviewdescription">
+    </com.google.android.material.search.SearchView>
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nsv_content"
         android:visibility="invisible"
@@ -63,15 +72,6 @@
             android:layout_width="match_parent" />
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <com.google.android.material.search.SearchView
-        android:hint="@string/searchbar_hint"
-        android:id="@+id/searchView"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        app:animateNavigationIcon="true"
-        app:layout_anchor="@id/searchBar">
-    </com.google.android.material.search.SearchView>
 
     <include
         android:id="@+id/inc_layout_search_person"

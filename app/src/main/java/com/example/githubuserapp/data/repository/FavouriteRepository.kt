@@ -1,4 +1,4 @@
-package com.example.githubuserapp.data.local
+package com.example.githubuserapp.data.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData

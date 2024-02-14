@@ -1,5 +1,6 @@
 package com.example.githubuserapp.ui.search
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -20,7 +21,6 @@ class SearchViewModel : ViewModel() {
     private val _isSearching = MutableLiveData<Boolean>()
     val isSearching: LiveData<Boolean> = _isSearching
 
-
     fun setSearchingState(isSearching: Boolean) {
         _isSearching.value = isSearching
     }
@@ -35,6 +35,9 @@ class SearchViewModel : ViewModel() {
             ) {
                 _isLoading.value = false
                 if (response.isSuccessful) _dataPerson.value = response.body()?.items
+                Log.d("Hei ini", "${response.body()?.items}")
+                Log.d("Hei ini", "${response.body()?.incompleteResults}")
+                Log.d("Hei ini", "${response.body()?.totalCount}")
             }
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {

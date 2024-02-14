@@ -1,10 +1,11 @@
-package com
+package com.example.githubuserapp.ui.search
 
 import android.os.Build
 import androidx.lifecycle.Observer
+import androidx.test.platform.app.InstrumentationRegistry
 import com.example.githubuserapp.data.remote.response.ItemsItem
 import com.example.githubuserapp.data.remote.retrofit.ApiService
-import com.example.githubuserapp.ui.search.SearchViewModel
+import com.example.githubuserapp.helper.JsonConverter
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
@@ -45,43 +46,17 @@ class SearchViewModelTest {
     }
 
     @Test
-    fun `Test 1`(){
+    fun `Test setData success`(){
         runBlocking {
             val mockResponse = MockResponse()
                 .setResponseCode(200)
-                .setBody("""
-                {
-                    "total_count": 1,
-                    "incomplete_results": false,
-                    "items": [
-                        {
-                            "login": "dwiaziprasetya",
-                            "id": 140523680,
-                            "node_id": "U_kgDOCGA4oA",
-                            "avatar_url": "https://avatars.githubusercontent.com/u/140523680?v=4",
-                            "gravatar_id": "",
-                            "url": "https://api.github.com/users/dwiaziprasetya",
-                            "html_url": "https://github.com/dwiaziprasetya",
-                            "followers_url": "https://api.github.com/users/dwiaziprasetya/followers",
-                            "following_url": "https://api.github.com/users/dwiaziprasetya/following{/other_user}",
-                            "gists_url": "https://api.github.com/users/dwiaziprasetya/gists{/gist_id}",
-                            "starred_url": "https://api.github.com/users/dwiaziprasetya/starred{/owner}{/repo}",
-                            "subscriptions_url": "https://api.github.com/users/dwiaziprasetya/subscriptions",
-                            "organizations_url": "https://api.github.com/users/dwiaziprasetya/orgs",
-                            "repos_url": "https://api.github.com/users/dwiaziprasetya/repos",
-                            "events_url": "https://api.github.com/users/dwiaziprasetya/events{/privacy}",
-                            "received_events_url": "https://api.github.com/users/dwiaziprasetya/received_events",
-                            "type": "User",
-                            "site_admin": false,
-                            "score": 1.0
-                        }
-                    ]
-                }
-            """.trimIndent())
+                .setBody(JsonConverter.readJSONFromAssets(
+                    InstrumentationRegistry
+                        .getInstrumentation()
+                        .context,
+                     "data.json"))
 
             val expected = mockWebServer.enqueue(mockResponse)
-
-
             val result = viewModel.setDataPerson("dwiaziprasetya")
 
             delay(1000)
@@ -91,7 +66,7 @@ class SearchViewModelTest {
     }
 
     @Test
-    fun `Test 2`(){
+    fun `Test setData failrue`(){
         runBlocking {
             val mockResponse = MockResponse()
                 .setResponseCode(404)

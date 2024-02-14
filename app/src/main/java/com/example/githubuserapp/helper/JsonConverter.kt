@@ -1,12 +1,12 @@
-package com.example.githubuserapp
+package com.example.githubuserapp.helper
 
 import android.content.Context
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
 object JsonConverter {
-    fun ReadJSONFromAssets(context: Context, path: String): String {
-        try {
+    fun readJSONFromAssets(context: Context, path: String): String {
+        return try {
             val file = context.assets.open(path)
             val bufferedReader = BufferedReader(InputStreamReader(file))
             val stringBuilder = StringBuilder()
@@ -16,10 +16,10 @@ object JsonConverter {
                 }
             }
             val jsonString = stringBuilder.toString()
-            return jsonString
+            jsonString
         } catch (e: Exception) {
             e.printStackTrace()
-            return ""
+            ""
         }
     }
 }

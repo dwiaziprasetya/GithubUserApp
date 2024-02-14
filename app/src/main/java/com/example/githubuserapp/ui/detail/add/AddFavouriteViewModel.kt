@@ -3,7 +3,7 @@ package com.example.githubuserapp.ui.detail.add
 import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserapp.data.local.FavouriteRepository
+import com.example.githubuserapp.data.repository.FavouriteRepository
 import com.example.githubuserapp.data.local.entity.Favourite
 
 class AddFavouriteViewModel(application: Application): ViewModel() {

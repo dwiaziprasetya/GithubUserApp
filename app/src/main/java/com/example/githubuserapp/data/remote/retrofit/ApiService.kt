@@ -18,7 +18,7 @@ interface ApiService {
     ) : Call<SearchResponse>
 
     @GET("/users/{username}")
-    @Headers("Authorization: token " + BuildConfig.TOKEN)
+        @Headers("Authorization: token " + BuildConfig.TOKEN)
     fun getDetailPerson(
         @Path("username") username: String
     ) : Call<DetailResponse>
