@@ -9,7 +9,6 @@ import com.example.githubuserapp.data.local.entity.Favourite
 @Database(entities = [Favourite::class], version = 1)
 abstract class FavouriteDatabase: RoomDatabase() {
     abstract fun favouriteDao(): FavouriteDao
-
     companion object {
         @Volatile
         private var INSTANCE: FavouriteDatabase? = null

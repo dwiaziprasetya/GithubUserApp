@@ -6,7 +6,8 @@
     android:background="?attr/colorOnPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.followingFollower.FollowingFollowerFragment">
+    tools:context=".ui.followingFollower.FollowingFollowerFragment"
+    tools:ignore="Overdraw">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -24,7 +25,7 @@
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
             android:minHeight="?attr/actionBarSize"
-            app:navigationIcon="@drawable/baseline_arrow_back_24"
+            app:navigationIcon="@drawable/back_icon"
             app:title="username"
             app:titleMarginTop="18dp"
             app:titleTextAppearance="@style/toolbar_text_following_followers" />
@@ -43,8 +44,8 @@
         app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
 
     <androidx.viewpager2.widget.ViewPager2
-        android:background="?attr/colorOnPrimary"
         android:id="@+id/view_pager"
+        android:background="?attr/colorOnPrimary"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

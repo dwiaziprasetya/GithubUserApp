@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.GithubUserApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -41,7 +41,4 @@
     </style>
 
     <!-- Label text bottom navigation active -->
-    <style name="label_text_bottom_nav_active." parent="@style/TextAppearance.AppCompat.Caption">
-        <item name="android:textSize">11sp</item>
-    </style>
 </resources>

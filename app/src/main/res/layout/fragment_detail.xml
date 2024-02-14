@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:background="?attr/colorOnPrimary"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.profile.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment"
+    tools:ignore="Overdraw">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar"
         android:background="?attr/colorOnPrimary"
         app:liftOnScrollColor="@color/grey_3"
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:minHeight="?attr/actionBarSize"
             android:fitsSystemWindows="true"
-            app:navigationIcon="@drawable/baseline_arrow_back_24"
+            app:navigationIcon="@drawable/back_icon"
             app:menu="@menu/detail_menu"
             app:titleTextAppearance="@style/toolbar_text" />
 
@@ -34,8 +34,8 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:visibility="invisible"
             android:id="@+id/cns_detail"
+            android:visibility="invisible"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -131,7 +131,6 @@
                 app:layout_constraintTop_toTopOf="@+id/v_line" />
 
             <TextView
-                android:id="@+id/tv_following_template"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppinsregular"

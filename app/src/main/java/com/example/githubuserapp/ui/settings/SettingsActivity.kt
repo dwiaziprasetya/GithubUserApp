@@ -5,12 +5,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
-import com.example.githubuserapp.MainViewModel
-import com.example.githubuserapp.MainViewModelFactory
 import com.example.githubuserapp.R
-import com.example.githubuserapp.SettingPreferences
-import com.example.githubuserapp.dataStore
 import com.example.githubuserapp.databinding.ActivitySettingsBinding
+import com.example.githubuserapp.helper.MainViewModelFactory
+import com.example.githubuserapp.ui.activity.MainViewModel
+import com.example.githubuserapp.utils.SettingPreferences
+import com.example.githubuserapp.utils.dataStore
 
 @Suppress("DEPRECATION")
 class SettingsActivity : AppCompatActivity() {

@@ -1,7 +1,6 @@
-package com.example.githubuserapp
+package com.example.githubuserapp.utils
 
 import android.content.Context
-import android.util.Log
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
@@ -13,18 +12,17 @@ import kotlinx.coroutines.flow.map
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 class SettingPreferences private constructor(private val dataStore: DataStore<Preferences>){
 
-    private val THEME_KEY = intPreferencesKey("theme_settings")
-    private val DEFAULT_NUMBER = 0
+    @Suppress("PrivatePropertyName")
+    private val KEY = intPreferencesKey("theme_settings")
 
     fun getThemeSetting(): Flow<Int> {
         return dataStore.data.map { preferences ->
-            preferences[THEME_KEY] ?: DEFAULT_NUMBER
+            preferences[KEY] ?: 0
         }
     }
     suspend fun saveThemeSetting(checkedItem: Int) {
         dataStore.edit { preferences ->
-            preferences[THEME_KEY] = checkedItem
-            Log.d("SettingPreferences", "Theme setting saved: $checkedItem")
+            preferences[KEY] = checkedItem
         }
     }
 

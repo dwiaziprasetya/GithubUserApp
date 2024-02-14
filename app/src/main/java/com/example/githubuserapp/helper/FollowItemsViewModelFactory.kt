@@ -1,7 +1,8 @@
-package com.example.githubuserapp.ui.followingFollower.followItems
+package com.example.githubuserapp.helper
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.githubuserapp.ui.followingFollower.followItems.FollowItemsViewModel
 
 @Suppress("UNCHECKED_CAST")
 class FollowItemsViewModelFactory(private val username: String,

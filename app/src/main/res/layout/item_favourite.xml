@@ -6,7 +6,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="0dp"
     android:background="?attr/colorOnPrimary"
-    android:id="@+id/card_item">
+    android:id="@+id/card_item"
+    tools:ignore="Overdraw">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +40,6 @@
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/tv_user_type"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"

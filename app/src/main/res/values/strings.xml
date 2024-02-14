@@ -22,18 +22,12 @@
     <string name="user_search_name_template">Michael Steven</string>
 
     <!-- Menu Resource -->
-    <string name="menu_refresh">Refresh</string>
     <string name="settings_menu">Settings</string>
     <string name="share_menu">Share</string>
     <string name="message_notification_menu">Message Notification</string>
-    <string name="email_notification_menu">Email Notification</string>
     <string name="plus_menu">Plus</string>
     <string name="microphone_menu">Microphone</string>
-    <string name="edit_profile_menu">Edit Profile</string>
-    <string name="hamburger_menu">Hamburger</string>
-    <string name="notification_menu">Notification</string>
     <string name="favourite_menu">Favourite</string>
-    <string name="favourite_menu_fill">Favourite</string>
 
     <!-- Template Resource -->
     <string name="repository_template">Repository</string>

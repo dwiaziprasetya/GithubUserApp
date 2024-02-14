@@ -13,11 +13,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
-import com.example.githubuserapp.helper.FavouriteViewModelFactory
 import com.example.githubuserapp.R
 import com.example.githubuserapp.data.local.entity.Favourite
 import com.example.githubuserapp.data.remote.response.DetailResponse
 import com.example.githubuserapp.databinding.FragmentDetailBinding
+import com.example.githubuserapp.helper.DetailViewModelFactory
+import com.example.githubuserapp.helper.FavouriteViewModelFactory
 import com.example.githubuserapp.ui.detail.add.AddFavouriteViewModel
 
 class DetailFragment : Fragment() {
@@ -61,7 +62,6 @@ class DetailFragment : Fragment() {
             handleNavigationClick()
         }
 
-        // OnClick
         binding.tvFollowersCount.setOnClickListener {
             val mBundle = Bundle()
             mBundle.putString(USERNAME, personUsername)
@@ -79,7 +79,7 @@ class DetailFragment : Fragment() {
         addFavouriteViewModel.isUserFavourite(personUsername).observe(viewLifecycleOwner) { isFavourite ->
             checkFavourite = isFavourite
             if (isFavourite) {
-                binding.appBarProfile.menu.findItem(R.id.favourite_menu).setIcon(R.drawable.icon_favourite_fill)
+                binding.appBarProfile.menu.findItem(R.id.favourite_menu).setIcon(R.drawable.favourite_icon_fill)
             }
         }
 
@@ -97,14 +97,12 @@ class DetailFragment : Fragment() {
                 } R.id.favourite_menu -> {
                     checkFavourite = !checkFavourite
                     if (checkFavourite) {
-                        // Add user
                         addFavouriteViewModel.insert(favourite as Favourite)
                         Toast.makeText(requireActivity(), "$personUsername added to favourites",
                             Toast.LENGTH_SHORT)
                             .show()
                     } else {
-                        menuItem.setIcon(R.drawable.icon_favourite)
-                        // delete user
+                        menuItem.setIcon(R.drawable.favourite_icon)
                         addFavouriteViewModel.delete(favourite as Favourite)
                         Toast.makeText(requireActivity(), "$personUsername removed from favourites",
                             Toast.LENGTH_SHORT)
@@ -117,7 +115,6 @@ class DetailFragment : Fragment() {
     }
 
     private fun setData(person : DetailResponse) {
-        // default value
         fun TextView.setTextOrDash(value : CharSequence?) {
             text = value ?: "-"
         }

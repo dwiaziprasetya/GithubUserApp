@@ -23,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [Build.VERSION_CODES.P], manifest = Config.NONE)
 class SearchViewModelTest {
+
     private lateinit var viewModel: SearchViewModel
     private lateinit var apiService: ApiService
     private lateinit var mockWebServer: MockWebServer

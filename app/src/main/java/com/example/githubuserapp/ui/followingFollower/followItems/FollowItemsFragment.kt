@@ -7,16 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuserapp.ui.adapter.ListFollowingFollowerAdapter
-import com.example.githubuserapp.databinding.FragmentFollowersBinding
 import com.example.githubuserapp.data.remote.response.FollowersResponseItem
+import com.example.githubuserapp.databinding.FragmentFollowersBinding
+import com.example.githubuserapp.helper.FollowItemsViewModelFactory
+import com.example.githubuserapp.ui.adapter.ListFollowingFollowerAdapter
 
 class FollowItemsFragment : Fragment() {
-    companion object {
-        const val ARG_NAME = "username"
-        const val SECTION_NUMBER = "section_number"
-    }
-
     private var _binding: FragmentFollowersBinding? = null
     private val binding get() = _binding!!
 
@@ -58,5 +54,10 @@ class FollowItemsFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean){
         binding.pbFollowers.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    companion object {
+        const val ARG_NAME = "username"
+        const val SECTION_NUMBER = "section_number"
     }
 }

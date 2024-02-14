@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorOnPrimary"
-    tools:context=".ui.followingFollower.followItems.FollowItemsFragment">
+    tools:context=".ui.followingFollower.followItems.FollowItemsFragment"
+    tools:ignore="Overdraw">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_followers"

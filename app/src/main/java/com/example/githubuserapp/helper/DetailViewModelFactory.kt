@@ -1,7 +1,8 @@
-package com.example.githubuserapp.ui.detail
+package com.example.githubuserapp.helper
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.githubuserapp.ui.detail.DetailViewModel
 
 @Suppress("UNCHECKED_CAST")
 class DetailViewModelFactory(private val username: String) : ViewModelProvider.Factory {

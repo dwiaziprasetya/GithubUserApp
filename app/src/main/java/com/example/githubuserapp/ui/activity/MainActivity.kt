@@ -7,12 +7,11 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.githubuserapp.MainViewModel
-import com.example.githubuserapp.MainViewModelFactory
 import com.example.githubuserapp.R
-import com.example.githubuserapp.SettingPreferences
-import com.example.githubuserapp.dataStore
 import com.example.githubuserapp.databinding.ActivityMainBinding
+import com.example.githubuserapp.helper.MainViewModelFactory
+import com.example.githubuserapp.utils.SettingPreferences
+import com.example.githubuserapp.utils.dataStore
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubuserapp.BuildConfig
-import com.example.githubuserapp.databinding.ItemPersonListBinding
 import com.example.githubuserapp.data.remote.response.ItemsItem
+import com.example.githubuserapp.databinding.ItemPersonListBinding
 
 class SearchAdapter (private val listPerson : ArrayList<ItemsItem>) : RecyclerView.Adapter<SearchAdapter.ListViewHolder>() {
 
