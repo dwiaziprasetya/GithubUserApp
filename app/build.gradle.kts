@@ -1,5 +1,3 @@
-import java.util.Properties
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -22,14 +20,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        val properties = Properties()
-        properties.load(project.rootProject.file("local.properties").inputStream())
-
         buildConfigField("String", "BASE_URL_USER", "\"https://github.com/\"")
-        buildConfigField("String", "TOKEN", "\"${properties.getProperty("TOKEN")}\"")
+        buildConfigField("String", "TOKEN", "\"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\"")
         buildConfigField("String", "BASE_URL", "\"https://api.github.com\"")
         buildConfigField("String", "BASE_URL_AVATAR_URL", "\"https://avatars.githubusercontent.com/u/\"")
-        buildConfigField("String", "PROFILE_USERNAME", "\"${properties.getProperty("username")}\"")
+        buildConfigField("String", "PROFILE_USERNAME", "\"dwiaziprasetya\"")
     }
 
     buildTypes {
